@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { ThemeProvider, createTheme, withStyles, Arwes, Puffs } from 'arwes';
 
 function App() {
+
+  const myTheme = {
+    color: {
+
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={createTheme(myTheme)}>
+      <Arwes>
+        <Puffs>
+          <div className="puffs" style={{ width: '100%', height: '100vh' }}>
+            <div className="main-container">
+              <h1>Thomas Bachorz: Full-Stack Software Developer</h1>
+            </div>
+          </div>
+        </Puffs>
+      </Arwes>
+    </ThemeProvider>
   );
 }
 
