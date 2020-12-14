@@ -9,12 +9,6 @@ export default function Navbar({ selectedPage, setSelectedPage }) {
     }
     
     const checkIfActive = (pageName) => {
-        // const navBar = document.querySelector(".nav-bar")
-        // if (navBar) {
-        //     const navBarWidth = navBar.offsetWidth
-        //     const tabStyle = { borderWidth: `${navBarWidth / 3}px` }
-        // }
-        // border: 1px solid white;
         if (pageName === selectedPage) {
             return {
                 backgroundColor: '#27dafd',

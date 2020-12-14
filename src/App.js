@@ -5,7 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { ThemeProvider, createTheme, withStyles, Arwes, Puffs, Header, Frame } from 'arwes';
 import BioPage from './components/BioPage';
-import TestHeader2 from './components/TestHeader2';
+import Projects from './components/Projects';
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
 
   const showPage = {
     "bio": <BioPage />,
-    "projects": <TestHeader2/>,
+    "projects": <Projects/>,
     "contacts": null
   }
 
@@ -57,7 +57,6 @@ function App() {
                   >
                     <div animate  className="main-container">
                       <Navbar 
-                        animate
                         selectedPage={selectedPage}
                         setSelectedPage={setSelectedPage}
                       />
