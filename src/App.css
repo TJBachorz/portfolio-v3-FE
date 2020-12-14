@@ -39,7 +39,7 @@ header.header {
 }
 
 .arwes {
-  width: 100%;
+  /* width: 100%; */
 }
 
 main {
@@ -51,12 +51,24 @@ main {
   align-items: center;
 }
 
-.nav-bar, .projects-tab {
+.projects-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.nav-bar, .projects-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   border: 1px solid;
+  width: 100%;
+}
+
+.project-nav {
 }
 
 .nav-item, .project-item {
@@ -90,6 +102,15 @@ main {
   padding:5px;
 }
 
+.projects-tab {
+  display:flex;
+  justify-content: flex-start;
+}
+
+.project-item {
+  font-size: 18px;
+}
+
 img {
   width: 200px;
   height: 300px;
@@ -107,10 +128,13 @@ img {
   height: 100vh;
 }
 
-.projects-tab {
+/* .projects-nav {
   display: flex;
   flex-direction: row;
-}
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 80%;
+} */
 
 img {
   padding: 10px;

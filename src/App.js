@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import { ThemeProvider, createTheme, withStyles, Arwes, Puffs, Header, Frame } from 'arwes';
 import BioPage from './components/BioPage';
 import Projects from './components/Projects';
+import Contacts from './components/Contacts';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
   const showPage = {
     "bio": <BioPage />,
     "projects": <Projects/>,
-    "contacts": null
+    "contacts": <Contacts/>
   }
 
   const baseStyles = {
@@ -44,7 +45,7 @@ function App() {
                 <main>
                   <div className="header-container">
                     <Header className="header" animate animTime={1000}>
-                      <h1>Subject File:</h1>
+                      <h4>subject_file:</h4>
                     </Header>
                   </div>
                   <Frame
@@ -55,7 +56,7 @@ function App() {
                     animTime={1000}
                     layer='primary'
                   >
-                    <div animate  className="main-container">
+                    <div animate className="main-container">
                       <Navbar 
                         selectedPage={selectedPage}
                         setSelectedPage={setSelectedPage}
