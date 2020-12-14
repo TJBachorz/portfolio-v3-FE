@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 import Navbar from './components/Navbar';
-import { ThemeProvider, createTheme, withStyles, Arwes, Puffs, Words, Header, Frame } from 'arwes';
+import { ThemeProvider, createTheme, withStyles, Arwes, Puffs, Header, Frame } from 'arwes';
 import BioPage from './components/BioPage';
 import TestHeader2 from './components/TestHeader2';
 
@@ -12,7 +12,7 @@ function App() {
   const [selectedPage, setSelectedPage] = useState("bio")
 
   const showPage = {
-    "bio": <BioPage animate={true} show={true}/>,
+    "bio": <BioPage />,
     "projects": <TestHeader2/>,
     "contacts": null
   }
@@ -43,7 +43,7 @@ function App() {
               <>
                 <main>
                   <div className="header-container">
-                    <Header className="header" animate animTime={5000}>
+                    <Header className="header" animate animTime={1000}>
                       <h1>Subject File:</h1>
                     </Header>
                   </div>
@@ -63,7 +63,6 @@ function App() {
                       />
                       <div className="info-and-image">
                         {showPage[selectedPage]}
-                        {anim.status}
                       </div>
                     </div>
                   </Frame>
