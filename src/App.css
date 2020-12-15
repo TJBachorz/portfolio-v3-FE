@@ -20,9 +20,10 @@ h1 {
   text-align: left;
 }
 
-li {
+ul {
   list-style-type: cjk-ideographic;
   font-size: 16px;
+  color: #27dafd;
 }
 
 header.header {
@@ -38,9 +39,9 @@ header.header {
   width: 80vw; 
 }
 
-.arwes {
-  /* width: 100%; */
-}
+/* .arwes {
+  width: 100%;
+} */
 
 main {
   width: 100%;
@@ -68,9 +69,6 @@ main {
   width: 100%;
 }
 
-.project-nav {
-}
-
 .nav-item, .project-item {
   margin: 0;
   align-self: center;
@@ -79,6 +77,12 @@ main {
   padding: 5px 10px;
   cursor: pointer;
   text-align: center;
+}
+
+.data-block {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 
 .bio-data {
@@ -91,24 +95,55 @@ main {
   color: #27dafd;
   font-weight: 500;
   font-size: 20px;
+  margin-left: 6px;
 }
 
-.bio-page {
-  width: 70%;
+/* .bio-data {
+  width: 60%;
+} */
+
+.bio-page, .total-project-container {
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding:5px;
+  margin-top: 10px;
+}
+
+.total-project-container, .techs {
+  display:flex;
+  flex-direction: row;
 }
 
 .projects-tab {
   display:flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.tech-used {
+  width: 50px;
+  height: 50px;
 }
 
 .project-item {
   font-size: 18px;
+}
+
+.project-link-container {
+  display:flex;
+  flex-direction: row;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-links {
+  margin: 0px 5px 0px 5px;
 }
 
 img {
@@ -128,14 +163,6 @@ img {
   height: 100vh;
 }
 
-/* .projects-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  width: 80%;
-} */
-
 img {
   padding: 10px;
 }
@@ -143,4 +170,10 @@ img {
 p {
   margin: 1px;
 }
+
+a, a::before, a::after {
+  text-decoration: none;
+  color: #27dafd;
+}
+
 

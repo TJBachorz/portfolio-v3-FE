@@ -35,9 +35,7 @@ export default function Projects() {
                 <h4 className="epic-beer project-item" style={checkIfActive("epic-beer")} onClick={makeTargetProject}>Epic Beer Run</h4>
                 <h4 className="looksy project-item" style={checkIfActive("looksy")} onClick={makeTargetProject}>Looksy</h4>
             </div>
-            <div>
-                {showProjects[selectedProject]}
-            </div>
+            {showProjects[selectedProject]}
         </div>
     )
 }
