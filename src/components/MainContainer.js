@@ -13,7 +13,7 @@ export default function MainContainer() {
     const [selectedPage, setSelectedPage] = useState("bio")
 
     const showPage = {
-        "bio": <BioPage/>,
+        "bio": <BioPage selectedPage={selectedPage}/>,
         "projects": <Projects/>,
         "contacts": <Contacts/>
     }
@@ -24,7 +24,7 @@ export default function MainContainer() {
                 show={true}
                 animate={true}
                 level={3}
-                corners={4}
+                corners={7}
                 animTime={1000}
                 layer='primary'
             >
