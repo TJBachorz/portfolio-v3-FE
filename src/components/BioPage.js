@@ -6,7 +6,8 @@ import { Words, Frame, Appear } from 'arwes';
 export default function BioPage({ selectedPage }) {
 
     let imgCount = 0
-    
+    let intervalId
+
     const techHash = {
         React: "https://cdn.worldvectorlogo.com/logos/react.svg",
         ReactNavigation: "https://reactnavigation.org/img/spiro.svg",
@@ -24,8 +25,22 @@ export default function BioPage({ selectedPage }) {
     }
     const techEntries = Object.entries(techHash)
     
-    // const cycleTech = () => {
-    //     if (selectedPage === "bio") {
+    const cycleTech = () => {
+        const techImg = document.querySelector(".tech-used")
+        if (imgCount === techEntries.length) {
+            imgCount = 0
+        }
+        let [tech, src] = techEntries[imgCount]
+        techImg.src = src
+        techImg.alt = `${tech}`
+        imgCount++
+        setTimeout(() => {
+            cycleTech()
+        }, 3000)
+    }
+    
+    // useEffect(() => {
+    //     let intervalId = setInterval(() => {
     //         const techImg = document.querySelector(".tech-used")
     //         if (imgCount === techEntries.length) {
     //             imgCount = 0
@@ -34,26 +49,12 @@ export default function BioPage({ selectedPage }) {
     //         techImg.src = src
     //         techImg.alt = `${tech}`
     //         imgCount++
-    //     }
-    // }
-    
-    useEffect(() => {
-        let intervalId = setInterval(() => {
-            if (selectedPage !== "bio") {
-                clearInterval(intervalId)
-            }
-            if (selectedPage === "bio") {
-                const techImg = document.querySelector(".tech-used")
-                if (imgCount === techEntries.length) {
-                    imgCount = 0
-                }
-                let [tech, src] = techEntries[imgCount]
-                techImg.src = src
-                techImg.alt = `${tech}`
-                imgCount++
-            }
-        }, 3 * 1000)
-    }, [])
+    //     }, 3 * 1000)
+    // }, [])
+
+    // useEffect(() => {
+    //     clearInterval(intervalId)
+    // }, [selectedPage, intervalId])
     
     
     // const styleObj = () => {
@@ -111,7 +112,7 @@ export default function BioPage({ selectedPage }) {
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" 
                             alt="Javascript"
                         />
-                        {/* {techImageCycle()} */}
+                        {/* {cycleTech()} */}
                     </Frame>
                 </div>
             </div>
