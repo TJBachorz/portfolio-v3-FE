@@ -9,28 +9,11 @@ import { ThemeProvider, createTheme, Arwes, Puffs, Header, Words } from 'arwes';
 
 function App() {
 
-  // const baseStyles = {
-  //   width: '5%',
-  //   height: '20px',
-  //   borderWidth: '1px',
-  //   borderStyle: 'solid',
-  // }
-
-  // const styles = {
-  //   entering: {
-  //     width: '5%',
-  //     height: '20px',
-  //   },
-  //   entered: {
-  //     width: '80%',
-  //     height: '500px',
-  //   } 
-  // }
   return (
     <ThemeProvider theme={createTheme()}>
       <Puffs>
         <div className="puffs">
-          <Arwes className="arwes" animate show>
+          <Arwes className="arwes">
               <>
                 <main>
                   <div className="header-container">

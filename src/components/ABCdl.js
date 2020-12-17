@@ -22,25 +22,24 @@ export default function ABCdl() {
             </div>
             <div className="project-image-container">
                 <Frame
-                    show={true}
-                    animate={true}
+                    show
+                    animate
                     level={3}
                     corners={2}
-                    animTime={1000}
-                    layer='primary'
+                    layer='secondary'
                 >
-                    <img src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg"/>
+                    <img className="primary-img" src="https://media1.giphy.com/media/5Imt9DlRz1vnJTM8P0/giphy.gif" alt="project gif"/>
                 </Frame>
                 <div className="techs">
-                    <h6><Words animate>Tech used:</Words></h6>
+                    <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
                     <Frame
+                        show
                         animate
                         level={3}
                         corners={1}
-                        animTime={1000}
-                        layer='primary'
+                        layer='secondary'
                     >
-                        <img className="tech-used" src=""/>
+                        <img className="tech-used" src="" alt="tech used"/>
                     </Frame>
                 </div>
             </div>

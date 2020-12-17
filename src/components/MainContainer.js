@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import BioPage from './BioPage';
 import Projects from './Projects';
-import Contacts from './Contacts';
+import Contact from './Contact';
 
-import { ThemeProvider, createTheme, withStyles, Arwes, Puffs, Header, Frame } from 'arwes';
+import { Frame } from 'arwes';
 
 
 export default function MainContainer() {
@@ -13,19 +13,18 @@ export default function MainContainer() {
     const [selectedPage, setSelectedPage] = useState("bio")
 
     const showPage = {
-        "bio": <BioPage selectedPage={selectedPage}/>,
+        "bio": <BioPage/>,
         "projects": <Projects/>,
-        "contacts": <Contacts/>
+        "contact": <Contact/>
     }
 
     return (
         <div>
             <Frame
-                show={true}
-                animate={true}
+                show
+                animate
                 level={3}
-                corners={7}
-                animTime={1000}
+                corners={6}
                 layer='primary'
             >
                 <div animate className="main-container">

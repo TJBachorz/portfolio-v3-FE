@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 
-import { Words, Frame, Appear } from 'arwes';
+import { Words, Frame } from 'arwes';
 
-
-export default function BioPage({ selectedPage }) {
+export default function BioPage() {
 
     let imgCount = 0
 
@@ -37,12 +36,22 @@ export default function BioPage({ selectedPage }) {
     
     useEffect(() => {
         let intervalId = setInterval(cycleTech, 2500)
+        marginCheck()
         return () => clearInterval(intervalId)
     })
 
+    const marginCheck = () => {
+        const bioImgDiv = document.querySelector(".bio-image-container")
+        const bioPageContainer = document.querySelector(".bio-page-container")
+        if (bioPageContainer.offsetHeight < bioPageContainer.offsetWidth) {
+            const navBar = document.querySelector(".nav-bar")
+            bioImgDiv.style.marginTop = (navBar.offsetHeight + 1) + "px"
+        }
+    }
+
     return (
-        <div className="bio-page">
-            <div className="bio-data">
+        <div className="bio-page-container">
+            <div className="bio-info">
                 <div className="data-block">
                     <p className="bio-data"><Words animate>subject_name:</Words></p> 
                     <p className="answer"><Words animate>Thomas Bachorz</Words></p>
@@ -63,30 +72,24 @@ export default function BioPage({ selectedPage }) {
                     <li><Words animate>Subject should be approached with extreme enthusiasm</Words></li>
                 </ul>   
             </div>
-            <div className="bio-image">
-                {/* <Appear animate> */}
-                    <Frame
-                        show={true}
-                        animate={true}
-                        level={3}
-                        corners={2}
-                        animTime={1000}
-                        layer='secondary'
-                    >
-                        <img src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg"/>
-                    </Frame>
-                {/* </Appear> */}
+            <div className="bio-image-container">
+                <Frame
+                    animate
+                    level={3}
+                    corners={2}
+                    layer='secondary'
+                >
+                    <img className="primary-img" src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg" alt="project gif"/>
+                </Frame>
                 <div className="techs">
-                    <h6><Words animate>Skills:</Words></h6>
+                    <h6 className="tech-label"><Words animate>Skills:</Words></h6>
                     <Frame
                         animate
                         level={2}
                         corners={1}
-                        animTime={1000}
                         layer='secondary'
                     >
                         <img 
-                            // style={styleObj} 
                             className="tech-used" 
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" 
                             alt="Javascript"

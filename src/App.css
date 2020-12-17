@@ -103,23 +103,20 @@ main {
   margin-left: 6px;
 }
 
-/* .bio-data {
-  width: 60%;
-} */
-
-.bio-page  {
-  width: 80%;
+.bio-page-container  {
+  width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding:5px;
   margin-top: 10px;
 }
-
-.total-project-container {
-  padding:5px;
-  margin-top: 10px;
+.total-contact-container {
+  display:flex;
+  flex-direction: row;
+  width: 70%;
+  margin-bottom: 20px;
 }
 
 .total-project-container {
@@ -128,6 +125,8 @@ main {
   justify-content: space-evenly;
   align-items: flex-start;
   width: 90%;
+  padding:5px;
+  margin-top: 10px;
 }
 
 .projects-tab {
@@ -141,7 +140,6 @@ img.tech-used {
   width: 60px;
   height: 60px;
   text-align: center;
-  /* vertical-align: center; */
   padding: 8px;
   opacity: 1;
   margin: 2px;
@@ -162,7 +160,7 @@ img.tech-used {
   align-items: center;
 }
 
-.project-info {
+.project-info, .bio-info, .contact-info {
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -198,11 +196,23 @@ img {
   padding: 10px;
 }
 
+img.primary-img {
+  display: block;
+}
+
 p {
   margin: 1px;
+}
+
+.tech-label {
+  color: #f8f8ff;
 }
 
 a, a::before, a::after {
   text-decoration: none;
   color: #f8f8ff;
+}
+
+.contact-links {
+  list-style-type: none;
 }

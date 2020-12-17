@@ -24,25 +24,22 @@ export default function Looksy() {
             </div>
             <div className="project-image-container">
                 <Frame
-                    show={true}
-                    animate={true}
+                    animate
                     level={3}
                     corners={2}
-                    animTime={1000}
-                    layer='primary'
+                    layer='secondary'
                 >
-                    <img src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg"/>
+                    <img className="primary-img" src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg" alt="Looksy project gif"/>
                 </Frame>
                 <div className="techs">
-                    <h6><Words animate>Tech used:</Words></h6>
+                    <h6 className="tech-label"><Words animate>tech_used:</Words></h6>
                     <Frame
                         animate
                         level={3}
                         corners={1}
-                        animTime={1000}
-                        layer='primary'
+                        layer='secondary'
                     >
-                        <img className="tech-used" src=""/>
+                        <img className="tech-used" src="" alt="Looksy tech used"/>
                     </Frame>
                 </div>
             </div>
