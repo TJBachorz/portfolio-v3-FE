@@ -80,21 +80,28 @@ main {
   align-items: center;
   border: 1px solid;
   width: 100%;
+  align-items: stretch;
 }
 
-.project-tab {
-  width: 100%;
-  /* height: 100%;  */
+.project-item {
+  display:flex;
+  justify-content: center;
+  font-size: 18px;
 }
+
+ /* {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
 
 /* .project-item  was paired with .nav-item below */
 
 .nav-item, .project-item {
   margin: 0;
-  align-self: center;
-  /* box-sizing: border-box; */
   width:100%;
-  padding: 5px; /*10px*/
+  padding: 5px;
   cursor: pointer;
   text-align: center;
 }
@@ -155,10 +162,6 @@ img.tech-used {
   transform: opacity 0 ease-in-out;
 }
 
-.project-item {
-  font-size: 18px;
-}
-
 .project-link-container, .techs {
   display:flex;
   flex-direction: row;
@@ -189,7 +192,7 @@ img {
   height: 300px;
 }
 
-.info-and-image {
+.info-and-image, .project-tab {
   display: flex;
   justify-content: center;
   align-items: center;
