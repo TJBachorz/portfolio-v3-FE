@@ -25,6 +25,7 @@ export default function BioPage() {
     
     const cycleTech = () => {
         const techImg = document.querySelector(".tech-used")
+        // techImg.style.opacity = 0
         if (imgCount === techEntries.length) {
             imgCount = 0
         }
@@ -32,6 +33,7 @@ export default function BioPage() {
         techImg.src = src
         techImg.alt = `${tech}`
         imgCount++
+        // techImg.style.opacity = 1
     }
     
     useEffect(() => {

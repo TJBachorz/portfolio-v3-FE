@@ -20,6 +20,7 @@ export default function Contact() {
                 <h2><Words animate>contact_links</Words></h2>
                 <div className="contact-link-container">
                     <ul className="contact-links">
+                        <li className="link"><Words animate>&lt; tjbachorz@gmail.com &gt;</Words></li>
                         <li className="link"><Words animate>&lt; linkedin &gt;</Words></li>
                         <li className="link"><Words animate>&lt; github &gt;</Words></li>
                         <li className="link"><Words animate>&lt; medium &gt;</Words></li>

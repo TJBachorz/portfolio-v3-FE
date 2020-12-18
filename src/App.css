@@ -56,15 +56,15 @@ main {
   align-items: center;
 }
 
-.projects-tab {
+.projects-tab-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 }
 
-.nav-bar, .projects-nav {
+.nav-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -73,12 +73,28 @@ main {
   width: 100%;
 }
 
+.projects-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  width: 100%;
+}
+
+.project-tab {
+  width: 100%;
+  /* height: 100%;  */
+}
+
+/* .project-item  was paired with .nav-item below */
+
 .nav-item, .project-item {
   margin: 0;
   align-self: center;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   width:100%;
-  padding: 5px 10px;
+  padding: 5px; /*10px*/
   cursor: pointer;
   text-align: center;
 }
@@ -87,7 +103,6 @@ main {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  /* vertical-align: baseline; */
 }
 
 .bio-data {
@@ -127,12 +142,6 @@ main {
   width: 90%;
   padding:5px;
   margin-top: 10px;
-}
-
-.projects-tab {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 img.tech-used {
