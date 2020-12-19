@@ -25,19 +25,14 @@ export default function BioPage() {
     
     const cycleTech = () => {
         const techImg = document.querySelector(".tech-used")
-        // techImg.style.opacity = 0
-        if (imgCount === techEntries.length) {
-            imgCount = 0
-        }
         let [tech, src] = techEntries[imgCount]
         techImg.src = src
         techImg.alt = `${tech}`
-        imgCount++
-        // techImg.style.opacity = 1
+        return imgCount === techEntries.length - 1 ? imgCount = 0 : imgCount++
     }
     
     useEffect(() => {
-        let intervalId = setInterval(cycleTech, 2500)
+        const intervalId = setInterval(cycleTech, 1500)
         marginCheck()
         return () => clearInterval(intervalId)
     })
@@ -81,7 +76,9 @@ export default function BioPage() {
                     corners={2}
                     layer='secondary'
                 >
-                    <img className="primary-img" src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg" alt="project gif"/>
+                    <div className="fuzzy-background">
+                        <img className="primary-img" src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg" alt="project gif"/>
+                    </div>
                 </Frame>
                 <div className="techs">
                     <h6 className="tech-label"><Words animate>Skills:</Words></h6>
@@ -91,11 +88,9 @@ export default function BioPage() {
                         corners={1}
                         layer='secondary'
                     >
-                        <img 
-                            className="tech-used" 
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" 
-                            alt="Javascript"
-                        />
+                        <div className="fuzzy-background">
+                            <img className="tech-used" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" alt="Javascript"/>
+                        </div>
                     </Frame>
                 </div>
             </div>

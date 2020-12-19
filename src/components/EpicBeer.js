@@ -34,7 +34,9 @@ export default function EpicBeer() {
                     corners={2}
                     layer='secondary'
                 >
-                    <img className="primary-img" src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg" alt="project gif"/>
+                    <div className="fuzzy-background">
+                        <img className="primary-img" src="https://media.giphy.com/media/xdlQcTOqbTpq53xy8c/giphy.gif" alt="project gif"/>
+                    </div>
                 </Frame>
                 <div className="techs">
                     <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
@@ -44,7 +46,9 @@ export default function EpicBeer() {
                         corners={1}
                         layer='secondary'
                     >
+                    <div className="fuzzy-background">
                         <img className="tech-used" src="" alt="tech used"/>
+                    </div>
                     </Frame>
                 </div>
             </div>

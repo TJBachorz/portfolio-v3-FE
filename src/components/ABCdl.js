@@ -28,7 +28,9 @@ export default function ABCdl() {
                     corners={2}
                     layer='secondary'
                 >
-                    <img className="primary-img" src="https://media1.giphy.com/media/5Imt9DlRz1vnJTM8P0/giphy.gif" alt="project gif"/>
+                    <div className="fuzzy-background">
+                        <img className="primary-img" src="https://media1.giphy.com/media/5Imt9DlRz1vnJTM8P0/giphy.gif" alt="project gif"/>
+                    </div>
                 </Frame>
                 <div className="techs">
                     <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
@@ -39,7 +41,9 @@ export default function ABCdl() {
                         corners={1}
                         layer='secondary'
                     >
+                    <div className="fuzzy-background">
                         <img className="tech-used" src="" alt="tech used"/>
+                    </div>
                     </Frame>
                 </div>
             </div>

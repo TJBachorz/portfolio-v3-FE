@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Words, Frame } from 'arwes';
 
+import looksyGIF1 from '../assets/looksy-1.gif';
+import looksyGIF2 from '../assets/looksy-2.gif';
+
 export default function Looksy() {
+
+    const backupGIFS = ["https://j.gifs.com/ZYP52R.gif", "https://j.gifs.com/BNkzVN.gif"]
+
+    const looksyGIFS = [looksyGIF1, looksyGIF2]
+
+    let imgCount = 1
+
+    const cycleGIFS = () => {
+        const gifImage = document.querySelector(".primary-img")
+        gifImage.src = looksyGIFS[imgCount]
+        return imgCount === 0 ? imgCount++ : imgCount--
+    }
+
+    useEffect(() => {
+        const looksyGIFIntervalID = setInterval(cycleGIFS, 9000)
+        return () => clearInterval(looksyGIFIntervalID)
+    })
+
+
     return (
         <div className="total-project-container">
             <div className="project-info">
@@ -29,7 +51,9 @@ export default function Looksy() {
                     corners={2}
                     layer='secondary'
                 >
-                    <img className="primary-img" src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg" alt="Looksy project gif"/>
+                    <div className="fuzzy-background">
+                        <img className="primary-img" src={looksyGIFS[0]} alt="Looksy gif"/>
+                    </div>
                 </Frame>
                 <div className="techs">
                     <h6 className="tech-label"><Words animate>tech_used:</Words></h6>
@@ -39,10 +63,13 @@ export default function Looksy() {
                         corners={1}
                         layer='secondary'
                     >
+                    <div className="fuzzy-background">
                         <img className="tech-used" src="" alt="Looksy tech used"/>
+                    </div>
                     </Frame>
                 </div>
             </div>
         </div>
     )
+    // <iframe src='//gifs.com/embed/looksy-1-ZYP52R' frameborder='0' scrolling='no' width='172px' height='360px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>
 }

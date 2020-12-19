@@ -20,12 +20,11 @@ export default function Contact() {
                 <h2><Words animate>contact_links</Words></h2>
                 <div className="contact-link-container">
                     <ul className="contact-links">
-                        <li className="link"><Words animate>&lt; tjbachorz@gmail.com &gt;</Words></li>
-                        <li className="link"><Words animate>&lt; linkedin &gt;</Words></li>
-                        <li className="link"><Words animate>&lt; github &gt;</Words></li>
-                        <li className="link"><Words animate>&lt; medium &gt;</Words></li>
-                        <li className="link"><Words animate>&lt; twitter &gt;</Words></li>
-                        <li className="link"><Words animate>&lt; download_subject_resume &gt;</Words></li>
+                        <li className="link"><Words animate>&lt;</Words><a href="https://www.linkedin.com/in/tjbachorz/"> <Words animate>linkedin</Words></a><Words animate>&nbsp;&gt;</Words></li>
+                        <li className="link"><Words animate>&lt;</Words><a href="https://github.com/TJBachorz"> <Words animate>github</Words></a><Words animate>&nbsp;&gt;</Words></li>
+                        <li className="link"><Words animate>&lt;</Words><a href="https://tjbachorz.medium.com/"> <Words animate>medium</Words></a><Words animate>&nbsp;&gt;</Words></li>
+                        <li className="link"><Words animate>&lt;</Words><a href="https://twitter.com/ThomasBachorz"> <Words animate>twitter</Words></a><Words animate>&nbsp;&gt;</Words></li>
+                        <li className="link"><Words animate>&lt;</Words><a href=""> <Words animate>download_subject_resume</Words></a><Words animate>&nbsp;&gt;</Words></li>
                     </ul>
                 </div>
             </div>
@@ -36,7 +35,9 @@ export default function Contact() {
                     corners={2}
                     layer='secondary'
                 >
-                    <img src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg"/>
+                    <div className="fuzzy-background">
+                        <img className="contact-image" src="" alt=""/>
+                    </div>
                 </Frame>
             </div>
         </div>

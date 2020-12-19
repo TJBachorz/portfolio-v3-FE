@@ -89,13 +89,6 @@ main {
   font-size: 18px;
 }
 
- /* {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 /* .project-item  was paired with .nav-item below */
 
 .nav-item, .project-item {
@@ -151,6 +144,10 @@ main {
   margin-top: 10px;
 }
 
+.project-image-container {
+  margin-top: 35px;
+}
+
 img.tech-used {
   display:block;
   width: 60px;
@@ -170,12 +167,13 @@ img.tech-used {
 .techs {
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 25px;
 }
 
 .project-info, .bio-info, .contact-info {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 50%;
 }
 
 .project-links, .separator {
@@ -187,9 +185,11 @@ img.tech-used {
   margin-right: 8px;
 }
 
-img {
-  width: 200px;
-  height: 300px;
+img.primary-img {
+  max-height: 330px;
+  max-width: 330px;
+  display: block;
+  padding:10px;
 }
 
 .info-and-image, .project-tab {
@@ -204,13 +204,11 @@ img {
   height: 100vh;
 }
 
-img {
-  padding: 10px;
-}
 
-img.primary-img {
-  display: block;
-}
+
+/* img {
+  padding: 10px;
+} */
 
 p {
   margin: 1px;
@@ -227,4 +225,11 @@ a, a::before, a::after {
 
 .contact-links {
   list-style-type: none;
+}
+
+.fuzzy-background {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://i.gifer.com/757a.gif");
+  margin: 1px;
+  width: 100%;
+  height:100%
 }
