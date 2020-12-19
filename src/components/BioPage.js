@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { Words, Frame } from 'arwes';
+import { Words, Frame, Animation } from 'arwes';
 
 export default function BioPage() {
 
-    let imgCount = 0
+    const [ animShow, setAnimShow ] = useState(false)
+
+    useEffect(() => {
+        setAnimShow(!animShow)
+    }, [])
 
     const techHash = {
         React: "https://cdn.worldvectorlogo.com/logos/react.svg",
@@ -20,80 +24,76 @@ export default function BioPage() {
         HTML: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png",
         CSS: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png",
         Javascript: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
-    }
+    }   
+
     const techEntries = Object.entries(techHash)
     
-    const cycleTech = () => {
-        const techImg = document.querySelector(".tech-used")
-        let [tech, src] = techEntries[imgCount]
-        techImg.src = src
-        techImg.alt = `${tech}`
-        return imgCount === techEntries.length - 1 ? imgCount = 0 : imgCount++
-    }
-    
-    useEffect(() => {
-        const intervalId = setInterval(cycleTech, 1500)
-        marginCheck()
-        return () => clearInterval(intervalId)
-    })
-
-    const marginCheck = () => {
-        const bioImgDiv = document.querySelector(".bio-image-container")
-        const bioPageContainer = document.querySelector(".bio-page-container")
-        if (bioPageContainer.offsetHeight < bioPageContainer.offsetWidth) {
-            const navBar = document.querySelector(".nav-bar")
-            bioImgDiv.style.marginTop = (navBar.offsetHeight + 1) + "px"
-        }
+    const renderTechImages = () => {
+        return techEntries.map(techEntry => {
+            const [tech, src] = techEntry
+            return <img className="tech-used" src={src} alt={tech}/>
+        })
     }
 
     return (
-        <div className="bio-page-container">
-            <div className="bio-info">
-                <div className="data-block">
-                    <p className="bio-data"><Words animate>subject_name:</Words></p> 
-                    <p className="answer"><Words animate>Thomas Bachorz</Words></p>
-                </div>
-                <div className="data-block">
-                    <p className="bio-data"><Words animate>nickname:</Words></p>
-                    <p className="answer"><Words animate>TJ</Words></p>
-                </div>
-                <div className="data-block">
-                    <p className="bio-data"><Words animate>occupation:</Words></p>
-                    <p className="answer"><Words animate>Full-Stack Software Developer</Words></p>
-                </div>
-                <ul>
-                    <li><Words animate>Former Professional Filmmaker and Brewer</Words></li>
-                    <li><Words animate>Excellent teamwork and communcation skills</Words></li>
-                    <li><Words animate>Seeks to create software that improves everything from workplace efficiency, to everyday lives</Words></li>
-                    <li><Words animate>Considered dangerously dependable</Words></li>
-                    <li><Words animate>Subject should be approached with extreme enthusiasm</Words></li>
-                </ul>   
-            </div>
-            <div className="bio-image-container">
-                <Frame
-                    animate
-                    level={3}
-                    corners={2}
-                    layer='secondary'
-                >
-                    <div className="fuzzy-background">
-                        <img className="primary-img" src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg" alt="project gif"/>
-                    </div>
-                </Frame>
-                <div className="techs">
-                    <h6 className="tech-label"><Words animate>Skills:</Words></h6>
-                    <Frame
-                        animate
-                        level={2}
-                        corners={1}
-                        layer='secondary'
-                    >
-                        <div className="fuzzy-background">
-                            <img className="tech-used" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" alt="Javascript"/>
+        <Animation show={animShow} animate timeout={2000}>
+            {anim => (
+                <>
+                    <section className="bio-page-container">
+                        <div className="bio-info">
+                            <div className="data-block-container">
+                                <div className="data-block">
+                                    <p className="bio-data"><Words animate>subject_name:</Words></p> 
+                                    <p className="answer"><Words animate>Thomas Bachorz</Words></p>
+                                </div>
+                                <div className="data-block">
+                                    <p className="bio-data"><Words animate>nickname:</Words></p>
+                                    <p className="answer"><Words animate>TJ</Words></p>
+                                </div>
+                                <div className="data-block">
+                                    <p className="bio-data"><Words animate>occupation:</Words></p>
+                                    <p className="answer"><Words animate>Full-Stack Software Developer</Words></p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><Words animate>Former Professional Filmmaker and Brewer</Words></li>
+                                <li><Words animate>Excellent teamwork and communcation skills</Words></li>
+                                <li><Words animate>Seeks to create software that improves everything from workplace efficiency, to everyday lives</Words></li>
+                                <li><Words animate>Considered dangerously dependable</Words></li>
+                                <li><Words animate>Subject should be approached with extreme enthusiasm</Words></li>
+                            </ul>   
+                            
                         </div>
-                    </Frame>
-                </div>
-            </div>
-        </div>
+                        <div className="bio-image-container">
+                            <Frame
+                                show={animShow}
+                                animate={true}
+                                level={3}
+                                corners={2}
+                                layer='secondary'
+                            >
+                                <div className="fuzzy-background">
+                                    <img className="primary-img" src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg" alt="project gif"/>
+                                </div>
+                            </Frame>
+                        </div>
+                    </section>
+                    <div className="techs">
+                        <h6 className="tech-label"><Words animate>Skills:</Words></h6>
+                        <Frame
+                            show={animShow}
+                            animate={true}
+                            level={2}
+                            corners={1}
+                            layer='secondary'
+                            >
+                            <div className="fuzzy-background">
+                                {renderTechImages()}
+                            </div>
+                        </Frame>
+                    </div>
+                </>
+            )}
+        </Animation>
     )
 }

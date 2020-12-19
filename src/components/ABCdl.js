@@ -6,7 +6,7 @@ export default function ABCdl() {
     return (
         <div className="total-project-container">
             <div className="project-info">
-                <h2><Words animate>ABC Data Logger</Words></h2>
+                <h2><Words animate >ABC Data Logger</Words></h2>
                 <div className="project-link-container">
                     <p className="project-links"><a rel="noreferrer" target="_blank" href="https://github.com/TJBachorz/ABC-Data-Logger-FE"><Words animate>Frontend</Words></a></p>
                     <p className="separator"><Words animate>|</Words></p>

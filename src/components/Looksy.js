@@ -24,7 +24,6 @@ export default function Looksy() {
         return () => clearInterval(looksyGIFIntervalID)
     })
 
-
     return (
         <div className="total-project-container">
             <div className="project-info">
@@ -47,6 +46,7 @@ export default function Looksy() {
             <div className="project-image-container">
                 <Frame
                     animate
+                    timeout={3000}
                     level={3}
                     corners={2}
                     layer='secondary'

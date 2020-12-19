@@ -1,10 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Words, Frame } from 'arwes';
 
 export default function Contact() {
 
-    useEffect(() => marginCheck())
+    const [ animShow, setAnimShow ] = useState(false)
+
+    useEffect(() => {
+        setAnimShow(!animShow)
+        marginCheck()
+        return () => setAnimShow(!animShow)
+    }, [])
+
+
 
     const marginCheck = () => {
         const contactPageContainer = document.querySelector(".total-contact-container")
@@ -20,7 +28,20 @@ export default function Contact() {
                 <h2><Words animate>contact_links</Words></h2>
                 <div className="contact-link-container">
                     <ul className="contact-links">
-                        <li className="link"><Words animate>&lt;</Words><a href="https://www.linkedin.com/in/tjbachorz/"> <Words animate>linkedin</Words></a><Words animate>&nbsp;&gt;</Words></li>
+                        <div>
+                            <li className="link"><Words animate>&lt;</Words><a href="https://www.linkedin.com/in/tjbachorz/"> <Words animate>linkedin</Words></a><Words animate>&nbsp;&gt;</Words></li>
+                        </div>
+                        <Frame
+                            show={animShow}
+                            animate={true}
+                            level={3}
+                            corners={2}
+                            layer='secondary'
+                        >
+                            <div className="fuzzy-background">
+                                <img className="contact-image" src="" alt=""/>
+                            </div>
+                        </Frame>
                         <li className="link"><Words animate>&lt;</Words><a href="https://github.com/TJBachorz"> <Words animate>github</Words></a><Words animate>&nbsp;&gt;</Words></li>
                         <li className="link"><Words animate>&lt;</Words><a href="https://tjbachorz.medium.com/"> <Words animate>medium</Words></a><Words animate>&nbsp;&gt;</Words></li>
                         <li className="link"><Words animate>&lt;</Words><a href="https://twitter.com/ThomasBachorz"> <Words animate>twitter</Words></a><Words animate>&nbsp;&gt;</Words></li>
@@ -30,7 +51,8 @@ export default function Contact() {
             </div>
             <div className="contact-image-container">
                 <Frame
-                    animate
+                    show={animShow}
+                    animate={true}
                     level={3}
                     corners={2}
                     layer='secondary'
