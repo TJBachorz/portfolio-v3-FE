@@ -31,7 +31,7 @@ export default function Contact() {
                         <div>
                             <li className="link"><Words animate>&lt;</Words><a href="https://www.linkedin.com/in/tjbachorz/"> <Words animate>linkedin</Words></a><Words animate>&nbsp;&gt;</Words></li>
                         </div>
-                        <Frame
+                        {/* <Frame
                             show={animShow}
                             animate={true}
                             level={3}
@@ -41,7 +41,7 @@ export default function Contact() {
                             <div className="fuzzy-background">
                                 <img className="contact-image" src="" alt=""/>
                             </div>
-                        </Frame>
+                        </Frame> */}
                         <li className="link"><Words animate>&lt;</Words><a href="https://github.com/TJBachorz"> <Words animate>github</Words></a><Words animate>&nbsp;&gt;</Words></li>
                         <li className="link"><Words animate>&lt;</Words><a href="https://tjbachorz.medium.com/"> <Words animate>medium</Words></a><Words animate>&nbsp;&gt;</Words></li>
                         <li className="link"><Words animate>&lt;</Words><a href="https://twitter.com/ThomasBachorz"> <Words animate>twitter</Words></a><Words animate>&nbsp;&gt;</Words></li>
@@ -50,7 +50,7 @@ export default function Contact() {
                 </div>
             </div>
             <div className="contact-image-container">
-                <Frame
+                {/* <Frame
                     show={animShow}
                     animate={true}
                     level={3}
@@ -60,7 +60,7 @@ export default function Contact() {
                     <div className="fuzzy-background">
                         <img className="contact-image" src="" alt=""/>
                     </div>
-                </Frame>
+                </Frame> */}
             </div>
         </div>
     )

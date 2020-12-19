@@ -35,6 +35,13 @@ export default function Projects() {
         "looksy": <Looksy/>,
     }
 
+    // const mainContainer = document.querySelector(".main-container")
+    // const projectNav = document.querySelector(".projects-nav")
+    // on projects nav
+    // const setFixedWidth = () => {
+    //     return { width: mainContainer.offsetWidth}
+    // }
+
     return (
         <Animation show={animShow} animate timeout={10000}>
             {anim => (

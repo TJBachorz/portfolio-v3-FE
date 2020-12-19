@@ -33,11 +33,13 @@ header.header {
   background: transparent; 
 }
 
-.main-container {
+/* .main-container {
   width: 0vw;
   transition: all 400ms ease-out;
-  height: 5vh;
-}
+  padding-bottom: auto;
+  height: 0;
+  overflow:auto;
+} */
 /* .main-container {
   width: 80vw;
 } */
@@ -71,6 +73,14 @@ main {
   align-items: center;
   border: 1px solid;
   width: 100%;
+
+  /* overflow: hidden;
+  position: fixed;
+  width:inherit;
+  z-index: 1; */
+}
+.sticky {
+  /* top: 0; */
 }
 
 .projects-nav {
@@ -81,6 +91,11 @@ main {
   border: 1px solid;
   width: 100%;
   align-items: stretch;
+
+  /* overflow: hidden;
+  position: fixed;
+  margin-top:37px;
+  z-index: 1; */
 }
 
 .project-item {
@@ -123,6 +138,8 @@ main {
 .bio-page-container  {
   width: 90%;
   display: flex;
+  flex-wrap: wrap;
+
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
@@ -140,7 +157,7 @@ main {
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
   width: 90%;
   padding:5px;
   margin-top: 35px;
@@ -153,24 +170,30 @@ main {
 
 img.tech-used {
   display:block;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   text-align: center;
   padding: 8px;
   opacity: 1;
   margin: 2px;
   transform: opacity 0 ease-in-out;
+  position: relative;
+  z-index: 0
 }
 
 .project-link-container, .techs {
   display:flex;
   flex-direction: row;
+  flex-flow: wrap;
+
 }
 
 .techs {
   justify-content: space-evenly;
   align-items: center;
   margin-top: 25px;
+  width: 80%;
+  margin-bottom: 20px;
 }
 
 .project-info, .bio-info, .contact-info {
@@ -197,6 +220,8 @@ img.primary-img {
   max-width: 330px;
   display: block;
   padding:10px;
+  position: relative;
+  z-index: 0
 }
 
 .info-and-image, .project-tab {
@@ -247,7 +272,15 @@ a, a::before, a::after {
   background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://i.gifer.com/757a.gif");
   margin: 1px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 0
+}
+
+.frame {
+  position: relative;
+  z-index: 0
 }

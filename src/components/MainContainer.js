@@ -10,11 +10,11 @@ import { Frame, Animation } from 'arwes';
 export default function MainContainer() {
 
     const [selectedPage, setSelectedPage] = useState("bio")
-    const [ animShow, setAnimShow ] = useState(false)
+    const [ mainAnimShow, setMainAnimShow ] = useState(false)
 
     useEffect(() => {
-        setAnimShow(!animShow)
-        return () => setAnimShow(!animShow)
+        setMainAnimShow(!mainAnimShow)
+        return () => setMainAnimShow(!mainAnimShow)
     }, [])
 
     const showPage = {
@@ -23,15 +23,24 @@ export default function MainContainer() {
         "contact": <Contact/>
     }
 
+    let baseStyle = {
+        width: '0vw',
+        transition: 'all 400ms ease-out',
+        height: '5vh',
+        position: 'relative',
+        zIndex: 0
+    }
+
     const pageStyle = (anim) => {
         if (selectedPage === "bio"){
             const style = {
                 entering: {
-                    width: "80vw"
+                    width: "80vw",
                 },
                 entered: {
                     width: "80vw",
-                    height: "75vh"
+                    height:'75vh',
+                    overflow: 'auto'
                 }
             }
             return {...style[anim.status]}
@@ -43,7 +52,23 @@ export default function MainContainer() {
                 },
                 entered: {
                     width: "80vw",
-                    height: "75vh"
+                    height: "80vh",
+                    overflow: 'auto'
+
+                }
+            }
+            return {...style[anim.status]}
+        }
+        if (selectedPage === "contact"){
+            const style = {
+                entering: {
+                    width: "80vw"
+                },
+                entered: {
+                    width: "80vw",
+                    height: "75vh",
+                    overflow: 'auto'
+
                 }
             }
             return {...style[anim.status]}
@@ -59,24 +84,33 @@ export default function MainContainer() {
             height: "75vh"
         }
     }
-    // "fit-content"
-    // "max-content"
-    // "min-content"
-    // "100%"
+
+    
+    // const navbar = document.querySelector(".nav-bar");
+    // const projectNavbar = document.querySelector(".projects-nav");
+
+    // const stickyNav = () => {
+    //     navbar.classList.add("sticky")
+    //     console.log(projectNavbar)
+    //     if (projectNavbar !== null) {
+    //         projectNavbar.classList.add("sticky")
+    //     }
+    // }
     
     return (
         <div>
-            <Animation show={animShow} animate timeout={1000}>
+            <Animation show={mainAnimShow} animate timeout={1000}>
                 {anim => (
                     <Frame
-                        show={animShow}
+                        className="frame"
+                        show={mainAnimShow}
                         animate={true}
                         appear
                         level={3}
                         corners={6}
                         layer='primary'
                     >
-                        <div animate className="main-container" style={pageStyle(anim)}>
+                        <div animate className="main-container" style={{...baseStyle, ...pageStyle(anim)}}>
                             <Navbar 
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
