@@ -22,11 +22,51 @@ export default function MainContainer() {
         "projects": <Projects/>,
         "contact": <Contact/>
     }
+
+    const pageStyle = (anim) => {
+        if (selectedPage === "bio"){
+            const style = {
+                entering: {
+                    width: "80vw"
+                },
+                entered: {
+                    width: "80vw",
+                    height: "75vh"
+                }
+            }
+            return {...style[anim.status]}
+        }
+        if (selectedPage === "projects"){
+            const style = {
+                entering: {
+                    width: "80vw"
+                },
+                entered: {
+                    width: "80vw",
+                    height: "75vh"
+                }
+            }
+            return {...style[anim.status]}
+        }
+    }
     
+    const style = {
+        entering: {
+            width: "80vw"
+        },
+        entered: {
+            width: "80vw",
+            height: "75vh"
+        }
+    }
+    // "fit-content"
+    // "max-content"
+    // "min-content"
+    // "100%"
     
     return (
         <div>
-            <Animation show={animShow} animate timeout={3000}>
+            <Animation show={animShow} animate timeout={1000}>
                 {anim => (
                     <Frame
                         show={animShow}
@@ -36,7 +76,7 @@ export default function MainContainer() {
                         corners={6}
                         layer='primary'
                     >
-                        <div animate className="main-container">
+                        <div animate className="main-container" style={pageStyle(anim)}>
                             <Navbar 
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
