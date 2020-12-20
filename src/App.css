@@ -146,6 +146,7 @@ main {
   padding:5px;
   margin-top:35px;
 }
+
 .total-contact-container {
   display:flex;
   flex-direction: row;
@@ -170,13 +171,12 @@ main {
 
 img.tech-used {
   display:block;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   text-align: center;
   padding: 8px;
   opacity: 1;
   margin: 2px;
-  transform: opacity 0 ease-in-out;
   position: relative;
   z-index: 0
 }
@@ -185,11 +185,10 @@ img.tech-used {
   display:flex;
   flex-direction: row;
   flex-flow: wrap;
-
 }
 
 .techs {
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   margin-top: 25px;
   width: 80%;
@@ -245,7 +244,7 @@ p {
 
 .tech-label {
   color: #f8f8ff;
-  margin-right: 10px;
+  margin-right: 12px;
   font-size: 16px
 }
 

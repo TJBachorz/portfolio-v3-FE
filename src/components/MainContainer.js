@@ -40,7 +40,7 @@ export default function MainContainer() {
                 entered: {
                     width: "80vw",
                     height:'75vh',
-                    overflow: 'auto'
+                    // overflow: 'auto'
                 }
             }
             return {...style[anim.status]}
