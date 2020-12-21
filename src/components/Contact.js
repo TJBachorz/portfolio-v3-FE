@@ -12,6 +12,9 @@ export default function Contact() {
         return () => setAnimShow(!animShow)
     }, [])
 
+    const handleSubmit = () => {
+        console.log("submitted")
+    }
 
 
     const marginCheck = () => {
@@ -26,7 +29,6 @@ export default function Contact() {
         <>
             <div className="total-contact-container">
                 <div className="contact-info">
-                    <h2><Words animate>contact_links</Words></h2>
                     <div className="contact-link-container">
                         <ul className="contact-links">
                             <li className="link"><Words animate>&lt;</Words><a href="https://www.linkedin.com/in/tjbachorz/"> <Words animate>linkedin</Words></a><Words animate>&nbsp;&gt;</Words></li>
@@ -52,12 +54,12 @@ export default function Contact() {
                 </div>
             </div>
             <div className="email-me">
-                <label for="email">Email:</label>
-                <input id="email" type="text" name="email"/>
-                <label for="subject">Subject:</label>
-                <input id="subject" type="text" name="subject"/>
-                <label for="email-body">Message:</label>
-                <input id="email-body" type="textarea" name="body"/>
+                <form onSubmit={handleSubmit} className="contact-form">
+                    <label for="email">contact_subject:</label>
+                    <input id="email" type="text" name="email" placeholder="email"/>
+                    <input id="email-body" type="textarea" name="body" placeholder="insert_message_here"/>
+                    <input type="submit" value="submit"/>
+                </form>
             </div>
         </>
     )

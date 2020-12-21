@@ -101,6 +101,7 @@ main {
 .project-item {
   display:flex;
   justify-content: center;
+  text-align: center;
   font-size: 18px;
 }
 
@@ -265,6 +266,13 @@ a, a::before, a::after {
 .contact-image-container {
   width: 200px;
   height: 200px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .fuzzy-background {
