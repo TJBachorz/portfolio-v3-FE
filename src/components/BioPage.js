@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { bioPageSkills, renderTechImages } from './Utilities';
+import { bioPageSkills, overflow, renderTechImages } from './Utilities';
 
 import { Words, Frame, Animation } from 'arwes';
 
@@ -20,7 +20,7 @@ export default function BioPage() {
         <Animation show={animShow} animate timeout={2000}>
             {anim => (
                 <>
-                    <section className="bio-page-container">
+                    <section className="bio-page-container" style={overflow()}>
                         <div className="bio-info">
                             <div className="data-block-container">
                                 <div className="data-block">

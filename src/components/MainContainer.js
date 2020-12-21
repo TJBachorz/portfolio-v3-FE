@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import BioPage from './BioPage';
 import Projects from './Projects';
 import Contact from './Contact';
+import { overflow } from './Utilities';
 
 import { Frame, Animation } from 'arwes';
 
@@ -28,7 +29,8 @@ export default function MainContainer() {
         transition: 'all 400ms ease-out',
         height: '5vh',
         position: 'relative',
-        zIndex: 0
+        zIndex: 0,
+        overflow: 'auto'
     }
 
     const pageStyle = (anim) => {
@@ -40,7 +42,6 @@ export default function MainContainer() {
                 entered: {
                     width: "80vw",
                     height:'75vh',
-                    // overflow: 'auto'
                 }
             }
             return {...style[anim.status]}
@@ -53,8 +54,6 @@ export default function MainContainer() {
                 entered: {
                     width: "80vw",
                     height: "80vh",
-                    overflow: 'auto'
-
                 }
             }
             return {...style[anim.status]}
@@ -67,24 +66,11 @@ export default function MainContainer() {
                 entered: {
                     width: "80vw",
                     height: "75vh",
-                    overflow: 'auto'
-
                 }
             }
             return {...style[anim.status]}
         }
     }
-    
-    const style = {
-        entering: {
-            width: "80vw"
-        },
-        entered: {
-            width: "80vw",
-            height: "75vh"
-        }
-    }
-
     
     // const navbar = document.querySelector(".nav-bar");
     // const projectNavbar = document.querySelector(".projects-nav");
@@ -110,7 +96,7 @@ export default function MainContainer() {
                         corners={6}
                         layer='primary'
                     >
-                        <div animate className="main-container" style={{...baseStyle, ...pageStyle(anim)}}>
+                        <div animate className="main-container" style={{...baseStyle, ...pageStyle(anim), ...overflow()}}>
                             <Navbar 
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}

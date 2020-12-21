@@ -5,6 +5,7 @@ import EpicBeer from './EpicBeer';
 import Looksy from './Looksy';
 
 import { Words, Animation } from 'arwes';
+import { overflow } from './Utilities';
 
 export default function Projects() {
 
@@ -43,9 +44,9 @@ export default function Projects() {
     // }
 
     return (
-        <Animation show={animShow} animate timeout={10000}>
+        <Animation show={animShow} animate timeout={1000}>
             {anim => (
-                <div className="projects-tab-container">
+                <div className="projects-tab-container" style={overflow()}>
                     <div className="projects-nav">
                         <div className="ABC project-tab" style={{ transition: 'all 250ms ease-out', ...invertColor("ABC")}}>
                             <h4 className="ABC project-item" onClick={makeTargetProject}><Words animate>ABC Data Logger</Words></h4>

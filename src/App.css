@@ -14,6 +14,13 @@ main {
   background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/08800aef-a1c3-4ac3-be7e-032bd085f169/d4f7xkv-6294abc9-f372-4550-9164-f198b6365ed0.png/v1/fill/w_1131,h_707,q_70,strp/blue_space_by_darkdissolution_d4f7xkv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMjAwIiwicGF0aCI6IlwvZlwvMDg4MDBhZWYtYTFjMy00YWMzLWJlN2UtMDMyYmQwODVmMTY5XC9kNGY3eGt2LTYyOTRhYmM5LWYzNzItNDU1MC05MTY0LWYxOThiNjM2NWVkMC5wbmciLCJ3aWR0aCI6Ijw9MTkyMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.Ss-6n9pb6rRxrF7U7_A5o-Zo826jnK_-PzQjLZB8D8c");
   background-size: cover;
   background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  transition: all 250ms ease-out;
 }
 
 h1 {
@@ -48,16 +55,6 @@ header.header {
   width: 80vw; 
 }
 
-main {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: baseline;
-  align-items: center;
-  transition: all 250ms ease-out;
-}
-
 .projects-tab-container {
   display: flex;
   flex-direction: column;
@@ -66,37 +63,35 @@ main {
   width: 100%;
 }
 
-.nav-bar {
+.nav-bar, .projects-nav, .contact-nav {
   display: flex;
   flex-direction: row;
+  flex-wrap: row-wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
   border: 1px solid;
   width: 100%;
+
 
   /* overflow: hidden;
   position: fixed;
   width:inherit;
   z-index: 1; */
 }
-.sticky {
-  /* top: 0; */
-}
 
-.projects-nav {
+/* .projects-nav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid;
-  width: 100%;
+  justify-content: space-around;
   align-items: stretch;
+  border: 1px solid;
+  width: 100%; */
 
   /* overflow: hidden;
   position: fixed;
   margin-top:37px;
-  z-index: 1; */
-}
+  z-index: 1;
+} */
 
 .project-item {
   display:flex;
@@ -148,13 +143,6 @@ main {
   margin-top:35px;
 }
 
-.total-contact-container {
-  display:flex;
-  flex-direction: row;
-  width: 70%;
-  margin-bottom: 20px;
-}
-
 .total-project-container {
   display:flex;
   flex-direction: row;
@@ -170,16 +158,42 @@ main {
   margin-top: 15px;
 }
 
-img.tech-used {
+.total-contact-container {
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+/* .fuzzy-background.contact {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 70%;
+} */
+
+img.tech-used, .contact-image {
   display:block;
   width: 45px;
   height: 45px;
-  text-align: center;
+  /* text-align: center; */
   padding: 8px;
   opacity: 1;
   margin: 2px;
   position: relative;
   z-index: 0
+}
+
+img.contact-image {
+  width:100px;
+  height: 100px;
+  margin: 5px;
 }
 
 .project-link-container, .techs {
@@ -189,6 +203,10 @@ img.tech-used {
 }
 
 .techs {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row;
   justify-content: center;
   align-items: center;
   margin-top: 25px;
@@ -215,7 +233,7 @@ div.contact-info {
   margin-right: 8px;
 }
 
-img.primary-img {
+img.primary-img, img.resume-image {
   max-height: 330px;
   max-width: 330px;
   display: block;
@@ -226,7 +244,7 @@ img.primary-img {
 
 .info-and-image, .project-tab {
   display: flex;
-  flex-flow: wrap;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -254,19 +272,11 @@ a, a::before, a::after {
   color: #f8f8ff;
 }
 
-.contact-links {
-  list-style-type: none;
-}
 
-.contact-image {
-  width:100px;
-  height: 100px;
-}
-
-.contact-image-container {
+/*.contact-image-container {
   width: 200px;
   height: 200px;
-}
+} */
 
 .contact-form {
   display: flex;
@@ -275,7 +285,7 @@ a, a::before, a::after {
   align-items: center;
 }
 
-.fuzzy-background {
+.fuzzy-background, .fuzzy-background.contact {
   background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://i.gifer.com/757a.gif");
   margin: 1px;
   display: flex;

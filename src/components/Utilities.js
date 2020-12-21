@@ -1,3 +1,4 @@
+import ARCube from '../assets/AR-cube.jpg';
 
 export const bioPageSkills = {
     Javascript: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
@@ -40,6 +41,7 @@ export const looksyTech = {
     Rails: "https://pbs.twimg.com/media/CZGHPChUAAA3jqE.png",
     AWS: "https://i.imgur.com/eeYUFCO.png",
     Postgres: "https://assets.ctfassets.net/k49d63tr8kcn/2PSwdyLfIIMqQomsok2Ea8/c8a3f648e592990e4bedfc4a0acbb312/icon-postgres.svg",
+    AR: ARCube
 }
 
 export const renderTechImages = (techHash) => {
@@ -48,4 +50,10 @@ export const renderTechImages = (techHash) => {
         const [tech, src] = techEntry
         return <img className="tech-used" src={src} alt={tech}/>
     })
+}
+
+export const overflow = () => {
+    setTimeout(() => {
+        return {overflow: "auto"}
+    }, 2000)
 }
