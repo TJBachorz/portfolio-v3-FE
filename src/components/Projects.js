@@ -36,26 +36,19 @@ export default function Projects() {
         "looksy": <Looksy/>,
     }
 
-    // const mainContainer = document.querySelector(".main-container")
-    // const projectNav = document.querySelector(".projects-nav")
-    // on projects nav
-    // const setFixedWidth = () => {
-    //     return { width: mainContainer.offsetWidth}
-    // }
-
     return (
         <Animation show={animShow} animate timeout={1000}>
             {anim => (
                 <div className="projects-tab-container" style={overflow()}>
                     <div className="projects-nav">
-                        <div className="ABC project-tab" style={{ transition: 'all 250ms ease-out', ...invertColor("ABC")}}>
-                            <h4 className="ABC project-item" onClick={makeTargetProject}><Words animate>ABC Data Logger</Words></h4>
+                        <div className="ABC project-tab" style={invertColor("ABC")}>
+                            <h5 className="ABC project-item" onClick={makeTargetProject}><Words animate>ABC Data Logger</Words></h5>
                         </div>
                         <div className="epic-beer project-tab" style={invertColor("epic-beer")}>
-                            <h4 className="epic-beer project-item" onClick={makeTargetProject}><Words animate>Epic Beer Run</Words></h4>
+                            <h5 className="epic-beer project-item" onClick={makeTargetProject}><Words animate>Epic Beer Run</Words></h5>
                         </div>
                         <div className="looksy project-tab" style={invertColor("looksy")}>
-                            <h4 className="looksy project-item" onClick={makeTargetProject}><Words animate>Looksy</Words></h4>
+                            <h5 className="looksy project-item" onClick={makeTargetProject}><Words animate>Looksy</Words></h5>
                         </div>
                     </div>
                     {showProjects[selectedProject]}

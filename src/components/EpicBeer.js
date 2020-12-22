@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { epicBeerTech, renderTechImages } from './Utilities';
 
@@ -6,8 +6,16 @@ import { Words, Frame } from 'arwes';
 
 
 export default function EpicBeer() {
-    
 
+    const [ animShow, setAnimShow ] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => {
+            if (animShow === false) {
+                setAnimShow(!animShow)
+            }
+        }, 100)
+    }, [])
 
     return (
         <>
@@ -31,6 +39,7 @@ export default function EpicBeer() {
                 </div>
                 <div className="project-image-container">
                     <Frame
+                        show={animShow}
                         animate
                         level={3}
                         corners={2}
@@ -45,6 +54,7 @@ export default function EpicBeer() {
             <div className="techs">
                 <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
                 <Frame
+                    show={animShow}
                     animate
                     level={3}
                     corners={1}

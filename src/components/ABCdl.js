@@ -6,12 +6,12 @@ import { Words, Frame } from 'arwes';
 
 export default function ABCdl() {
 
-    const [ ABCAnimShow, setABCAnimShow ] = useState(false)
+    const [ animShow, setAnimShow ] = useState(false)
 
     useEffect(() => {
         setTimeout(() => {
-            if (ABCAnimShow === false) {
-                setABCAnimShow(!ABCAnimShow)
+            if (animShow === false) {
+                setAnimShow(!animShow)
             }
         }, 100)
     }, [])
@@ -37,7 +37,7 @@ export default function ABCdl() {
                 <div className="project-image-container">
                     <Frame
                         className="frame"
-                        show={ABCAnimShow}
+                        show={animShow}
                         animate
                         level={3}
                         corners={2}
@@ -53,7 +53,7 @@ export default function ABCdl() {
                 <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
                 <Frame
                     className="frame"
-                    show={ABCAnimShow}
+                    show={animShow}
                     animate
                     level={3}
                     corners={1}

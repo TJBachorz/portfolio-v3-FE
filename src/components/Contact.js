@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import { Words, Frame } from 'arwes';
+import { Words, Frame, Button } from 'arwes';
 
-import resume from '../assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpeg';
+import resumePDF from '../assets/TJ_Bachorz_Resume.pdf';
+import resumeImage from '../assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpeg';
 import linkedin from '../assets/linkedin.png';
 import github from '../assets/github.png';
 import medium from '../assets/medium.png';
@@ -14,40 +15,31 @@ export default function Contact() {
 
     useEffect(() => {
         setAnimShow(!animShow)
-        marginCheck()
         return () => setAnimShow(!animShow)
     }, [])
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault()
         console.log("submitted")
-    }
-
-
-    const marginCheck = () => {
-        const contactPageContainer = document.querySelector(".total-contact-container")
-        if (contactPageContainer.offsetHeight < contactPageContainer.offsetWidth) {
-            const navBar = document.querySelector(".nav-bar")
-            contactPageContainer.style.marginTop = (navBar.offsetHeight + 1) + "px"
-        }
     }
 
     return (
         <>
             <section className="total-contact-container">
-                <Frame
-                    show={animShow}
-                    animate={true}
-                    level={3}
-                    corners={2}
-                    layer='secondary'
-                >
-                    <div className="fuzzy-background contact">
-                        <img className="contact-image" src={linkedin} alt="linkedin"/>
-                        <img className="contact-image" src={github} alt="github"/>
-                        <img className="contact-image" src={medium} alt="medium"/>
-                        <img className="contact-image" src={twitter} alt="twitter"/>
+                <div className="contact-nav">
+                        <h5 className="link">Linkedin</h5>
+                        <h5 className="link">Github</h5>
+                        <h5 className="link">Medium</h5>
+                        <h5 className="link">Twitter</h5>
+                    {/* <div className="contact-link">
                     </div>
-                </Frame>
+                    <div className="contact-link">
+                    </div>
+                    <div className="contact-link">
+                    </div>
+                    <div className="contact-link">
+                    </div> */}
+                </div>
                 <div className="resume-and-email">
                     <div className="contact-image-container">
                         <Frame
@@ -58,16 +50,16 @@ export default function Contact() {
                             layer='secondary'
                         >
                             <div className="fuzzy-background">
-                                <img className="resume-image" src={resume} alt="TJ Bachorz's Resume"/>
+                                <a href={resumePDF}><img className="resume-image" src={resumeImage} alt="TJ Bachorz's Resume"/></a>
                             </div>
                         </Frame>
                     </div>
                     <div className="email-me">
                         <form onSubmit={handleSubmit} className="contact-form">
-                            <label for="email">contact_subject:</label>
+                            <Words className="label" animate>contact_subject:</Words>
                             <input id="email" type="text" name="email" placeholder="email"/>
-                            <input id="email-body" type="textarea" name="body" placeholder="insert_message_here"/>
-                            <input type="submit" value="submit"/>
+                            <textarea id="message" rows="6" cols="40" name="message" placeholder="insert_message_here"/>
+                            <Button id="submit" type="submit">submit</Button>
                         </form>
                     </div>
                 </div>

@@ -29,7 +29,7 @@ export default function MainContainer() {
         transition: 'all 400ms ease-out',
         height: '5vh',
         position: 'relative',
-        zIndex: 0,
+        // zIndex: 0,
         overflow: 'auto'
     }
 

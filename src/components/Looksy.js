@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { looksyTech, renderTechImages } from './Utilities';
 
@@ -9,7 +9,8 @@ import looksyGIF2 from '../assets/looksy-2.gif';
 
 export default function Looksy() {
 
-    const backupGIFS = ["https://j.gifs.com/ZYP52R.gif", "https://j.gifs.com/BNkzVN.gif"]
+    const [ animShow, setAnimShow ] = useState(false)
+
 
     const looksyGIFS = [looksyGIF1, looksyGIF2]
 
@@ -23,6 +24,11 @@ export default function Looksy() {
 
     useEffect(() => {
         const looksyGIFIntervalID = setInterval(cycleGIFS, 9000)
+        setTimeout(() => {
+            if (animShow === false) {
+                setAnimShow(!animShow)
+            }
+        }, 100)
         return () => clearInterval(looksyGIFIntervalID)
     })
 
@@ -48,8 +54,9 @@ export default function Looksy() {
                 </div>
                 <div className="project-image-container">
                     <Frame
+                        className="frame"
+                        show={animShow}
                         animate
-                        timeout={3000}
                         level={3}
                         corners={2}
                         layer='secondary'
@@ -63,6 +70,8 @@ export default function Looksy() {
             <div className="techs">
                 <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
                 <Frame
+                    className="frame"
+                    show={animShow}
                     animate
                     level={3}
                     corners={1}
