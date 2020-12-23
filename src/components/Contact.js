@@ -42,10 +42,10 @@ export default function Contact() {
                             layer='secondary'
                         >
                             <div className="fuzzy-background">
-                                <a href={resumePDF}><img className="resume-image" src={resumeImage} alt="TJ Bachorz's Resume"/></a>
+                                <a href={ resumePDF } target="_blank" rel="noreferrer"><img className="resume-image" src={resumeImage} alt="TJ Bachorz's Resume"/></a>
                             </div>
                         </Frame>
-                        <a className="download-resume" href={resumePDF} download><Button show={contactAnimShow} animate>download_resume</Button></a>
+                        <a className="download-resume" href={ resumePDF } download><Button show={contactAnimShow} animate>download_resume</Button></a>
                     </div>
                     <div className="email-me">
                         <form onSubmit={handleSubmit} className="contact-form">

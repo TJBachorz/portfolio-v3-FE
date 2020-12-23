@@ -37,7 +37,7 @@ export default function Projects() {
     }
 
     return (
-        <Animation show={animShow} animate timeout={1000}>
+        <Animation >
             {anim => (
                 <div className="projects-tab-container" style={overflow()}>
                     <div className="projects-nav">

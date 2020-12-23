@@ -11,7 +11,7 @@ function App() {
 
   return (
     <ThemeProvider theme={createTheme()}>
-      <Puffs className="puffs">
+      <Puffs>
         <div className="puffs">
           <Arwes className="arwes">
               <>

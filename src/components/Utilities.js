@@ -36,7 +36,7 @@ export const looksyTech = {
     HTML: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png",
     CSS: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png",
     Javascript: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
-    Node: "https://destatic.blob.core.windows.net/images/nodejs-logo.png",
+    Node: "https://logodix.com/logo/1764882.png",
     Ruby: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/396px-Ruby_logo.svg.png",
     Rails: "https://pbs.twimg.com/media/CZGHPChUAAA3jqE.png",
     AWS: "https://i.imgur.com/eeYUFCO.png",
