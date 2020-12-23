@@ -15,7 +15,7 @@ export default function Contact() {
 
     useEffect(() => {
         setContactAnimShow(true)
-        // return () => setContactAnimShow(!contactAnimShow)
+        return () => setContactAnimShow(!contactAnimShow)
     }, [])
 
     const handleSubmit = (event) => {
@@ -31,6 +31,10 @@ export default function Contact() {
                     <a className="link" href="https://github.com/TJBachorz"><h4><Words animate>Github</Words></h4></a>
                     <a className="link" href="https://tjbachorz.medium.com/"><h4><Words animate>Medium</Words></h4></a>
                     <a className="link" href="https://twitter.com/ThomasBachorz"><h4><Words animate>Twitter</Words></h4></a>
+                    <a className="link-image" href="https://www.linkedin.com/in/tjbachorz/"><img className="soc-med-image" src={linkedin} alt="linked in"/></a>
+                    <a className="link-image" href="https://github.com/TJBachorz"><img className="soc-med-image" src={github} alt="github"/></a>
+                    <a className="link-image" href="https://tjbachorz.medium.com/"><img className="soc-med-image" src={medium} alt="medium"/></a>
+                    <a className="link-image" href="https://twitter.com/ThomasBachorz"><img className="soc-med-image" src={twitter} alt="twitter"/></a>
                 </div>
                 <div className="resume-and-email">
                     <div className="resume-container">
@@ -48,7 +52,7 @@ export default function Contact() {
                         <a className="download-resume" href={ resumePDF } download><Button show={contactAnimShow} animate>download_resume</Button></a>
                     </div>
                     <div className="email-me">
-                        <form onSubmit={handleSubmit} className="contact-form">
+                        <form id="email-form" onSubmit={handleSubmit} className="contact-form">
                             <Words className="label" animate>contact_subject:</Words>
                             <input id="email" type="text" name="full_name" placeholder="user_full_name"/>
                             <input id="email" type="text" name="email" placeholder="user_email"/>

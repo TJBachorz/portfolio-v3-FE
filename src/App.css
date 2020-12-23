@@ -269,6 +269,13 @@ a.link {
   color: #27dafd;
 }
 
+.soc-med-image {
+  max-height: 50px;
+  max-width: 50px;
+  margin-top: 8px;
+  display:none;
+}
+
 .contact-form, .resume-container {
   display: flex;
   flex-direction: column;
@@ -285,3 +292,18 @@ a.link {
   align-items: center;
   position: relative;
 }
+
+/* media query - phones */
+@media (max-width: 460px) {
+  .contact-nav {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://i.gifer.com/757a.gif");
+  }
+  
+  .link {
+    display:none;
+  }
+  
+  .soc-med-image {
+    display:inline-flex;
+  }
+} 
