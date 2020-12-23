@@ -44,15 +44,18 @@ header.header {
 
 .header-container {
   width: 80vw; 
+  margin-top: 15px;
 }
 
-.projects-tab-container {
-  display: flex;
+.total-contact-container, .projects-tab-container {
+  display:flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  margin-top: 0px;
 }
+
 
 .nav-bar, .projects-nav, .contact-nav {
   display: flex;
@@ -121,15 +124,6 @@ header.header {
 
 .project-image-container, .download-resume {
   margin-top: 15px;
-}
-
-.total-contact-container {
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  margin-top: 0px;
 }
 
 img.tech-used, .contact-image {
