@@ -240,6 +240,10 @@ input, textarea {
   text-align: center;
 }
 
+button {
+  width:100%
+}
+
 #submit:hover, .download-resume:hover {
   opacity: 0.6;
   cursor: pointer;
