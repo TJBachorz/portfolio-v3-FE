@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import BioPage from './BioPage';
 import Projects from './Projects';
 import Contact from './Contact';
-import { overflow } from './Utilities';
+// import { overflow } from './Utilities';
 
 import { Frame, Animation } from 'arwes';
 
@@ -29,7 +29,6 @@ export default function MainContainer() {
         transition: 'all 400ms ease-out',
         height: '5vh',
         position: 'relative',
-        // zIndex: 0,
         overflow: 'auto'
     }
 
@@ -72,17 +71,6 @@ export default function MainContainer() {
         }
     }
     
-    // const navbar = document.querySelector(".nav-bar");
-    // const projectNavbar = document.querySelector(".projects-nav");
-
-    // const stickyNav = () => {
-    //     navbar.classList.add("sticky")
-    //     console.log(projectNavbar)
-    //     if (projectNavbar !== null) {
-    //         projectNavbar.classList.add("sticky")
-    //     }
-    // }
-    
     return (
         <div>
             <Animation show={mainAnimShow} animate timeout={1000}>
@@ -96,7 +84,7 @@ export default function MainContainer() {
                         corners={6}
                         layer='primary'
                     >
-                        <div animate className="main-container" style={{...baseStyle, ...pageStyle(anim), ...overflow()}}>
+                        <div animate className="main-container" style={{...baseStyle, ...pageStyle(anim)}}>
                             <Navbar 
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}

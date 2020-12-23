@@ -11,39 +11,31 @@ import twitter from '../assets/twitter.png';
 
 export default function Contact() {
 
-    const [ animShow, setAnimShow ] = useState(false)
+    const [ contactAnimShow, setContactAnimShow ] = useState(false)
 
     useEffect(() => {
-        setAnimShow(!animShow)
-        return () => setAnimShow(!animShow)
+        setContactAnimShow(true)
+        // return () => setContactAnimShow(!contactAnimShow)
     }, [])
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log("submitted")
+        console.log(event.target)
     }
 
     return (
         <>
             <section className="total-contact-container">
                 <div className="contact-nav">
-                        <h5 className="link">Linkedin</h5>
-                        <h5 className="link">Github</h5>
-                        <h5 className="link">Medium</h5>
-                        <h5 className="link">Twitter</h5>
-                    {/* <div className="contact-link">
-                    </div>
-                    <div className="contact-link">
-                    </div>
-                    <div className="contact-link">
-                    </div>
-                    <div className="contact-link">
-                    </div> */}
+                    <a className="link" href="https://www.linkedin.com/in/tjbachorz/"><h4><Words animate>Linkedin</Words></h4></a>
+                    <a className="link" href="https://github.com/TJBachorz"><h4><Words animate>Github</Words></h4></a>
+                    <a className="link" href="https://tjbachorz.medium.com/"><h4><Words animate>Medium</Words></h4></a>
+                    <a className="link" href="https://twitter.com/ThomasBachorz"><h4><Words animate>Twitter</Words></h4></a>
                 </div>
                 <div className="resume-and-email">
-                    <div className="contact-image-container">
+                    <div className="resume-container">
                         <Frame
-                            show={animShow}
+                            show={contactAnimShow}
                             animate={true}
                             level={3}
                             corners={2}
@@ -53,17 +45,20 @@ export default function Contact() {
                                 <a href={resumePDF}><img className="resume-image" src={resumeImage} alt="TJ Bachorz's Resume"/></a>
                             </div>
                         </Frame>
+                        <a className="download-resume" href={resumePDF} download><Button show={contactAnimShow} animate>download_resume</Button></a>
                     </div>
                     <div className="email-me">
                         <form onSubmit={handleSubmit} className="contact-form">
                             <Words className="label" animate>contact_subject:</Words>
-                            <input id="email" type="text" name="email" placeholder="email"/>
+                            <input id="email" type="text" name="full_name" placeholder="user_full_name"/>
+                            <input id="email" type="text" name="email" placeholder="user_email"/>
+                            <input id="subject" type="text" name="subject" placeholder="subject"/>
                             <textarea id="message" rows="6" cols="40" name="message" placeholder="insert_message_here"/>
-                            <Button id="submit" type="submit">submit</Button>
+                            <Button animate id="submit" type="submit">submit</Button>
                         </form>
                     </div>
                 </div>
-            </section>
+            </section>   
         </>
     )
 }
