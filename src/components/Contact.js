@@ -9,6 +9,8 @@ import github from '../assets/github.png';
 import medium from '../assets/medium.png';
 import twitter from '../assets/twitter.png';
 
+import { isEmpty } from 'lodash';
+
 export default function Contact() {
 
     const initialState = {
@@ -22,7 +24,17 @@ export default function Contact() {
     const [ email, setEmail ] = useState({...initialState})
 
     const successMessage = document.querySelector(".email-success")
-    const failedMessage = document.querySelector(".email-failed")
+    const requireValidEmail = document.querySelector(".email-required")
+    const requireMessage = document.querySelector(".message-required")
+
+    const invalidEmail = () => requireValidEmail.style.display = "inline-flex"
+    const invalidMessage = () => requireMessage.style.display = "inline-flex"
+
+    const errorHash = {
+        "from": invalidEmail,
+        "from.email": invalidEmail,
+        "content.0.value": invalidMessage,
+    }
 
     useEffect(() => {
         setContactAnimShow(true)
@@ -44,26 +56,27 @@ export default function Contact() {
                 message: email.message
             })
         }).then(response => response.json())
-        .then(console.log)
+        .then(renderResponse)
     }
 
     const renderResponse = (result) => {
-        if (result === "success") {
+        if (isEmpty(result)) {
             setEmail({...initialState})
-            successMessage.style.display = "flex"
+            successMessage.style.display = "inline-flex"
             resetResponseMessage()
         } else {
-            failedMessage.style.display = "flex"
-            resetResponseMessage()
+            successMessage.style.display = "none"
+            const emailErrors = result.response.body.errors
+            emailErrors.map( error => errorHash[error.field]() )
         }
     }
 
     const resetResponseMessage = () => {
-        setTimeout(() => {
-            successMessage.style.display = "none";
-            failedMessage.style.display = "none";
-        }, 10000)
+        requireMessage.style.display = "none"
+        requireValidEmail.style.display = "none"
     }
+    
+
 
     return (
         <>
@@ -95,26 +108,28 @@ export default function Contact() {
                     </div>
                     <div className="email-me">
                         <form id="email-form" onSubmit={handleSubmit} className="contact-form">
-                            <Words className="label" animate>contact_subject:</Words>
-                            <input id="email" type="text" name="full_name" placeholder="user_full_name" 
+                            <Words show={contactAnimShow} className="label" animate>contact_subject:</Words>
+                            <input id="full-name" className="form-item" type="text" name="full_name" placeholder="user_full_name" 
                                 value={email.full_name} 
                                 onChange={(event) => setEmail({...email, full_name: event.target.value})}
                             />
-                            <input id="email" type="text" name="from" placeholder="user_email" 
+                            <input id="user-email" className="form-item" type="text" name="from" placeholder="user_email" 
                                 value={email.from} 
                                 onChange={(event) => setEmail({...email, from: event.target.value})}
                             />
-                            <input id="subject" type="text" name="subject" placeholder="subject" 
+                            <p className="email-required"><Words show={contactAnimShow} animate layer="alert">* valid_email_required</Words></p>
+                            <input id="subject" className="form-item" type="text" name="subject" placeholder="subject" 
                                 value={email.subject} 
                                 onChange={(event) => setEmail({...email, subject: event.target.value})}
                             />
-                            <textarea id="message" rows="6" cols="40" name="message" placeholder="insert_message_here" 
+                            <textarea id="message" className="form-item" rows="6" cols="40" name="message" placeholder="insert_message_here" 
                                 value={email.message} 
                                 onChange={(event) => setEmail({...email, message: event.target.value})}
                             />
-                            <Button animate id="submit" type="submit">submit</Button>
-                            <p className="email-success"><Words animate layer="success">email sent!</Words></p>
-                            <p className="email-failed"><Words animate layer="alert">email failed!  try again!</Words></p>
+                            <p className="message-required"><Words show={contactAnimShow} animate layer="alert">* required</Words></p>
+
+                            <Button show={contactAnimShow} animate id="submit" type="submit">submit</Button>
+                            <p className="email-success"><Words show={contactAnimShow} animate layer="success">email sent!</Words></p>
                         </form>
                     </div>
                 </div>

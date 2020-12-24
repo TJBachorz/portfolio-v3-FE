@@ -217,7 +217,7 @@ input, textarea {
   background-color: #05181d;
   color: #27dafd;
   box-shadow: 1px 1px #f8f8ff;
-  margin: 0px 0px 20px 0px;
+  margin: 20px 0px 0px 0px;
   width: 100%;
 }
 
@@ -238,6 +238,7 @@ input, textarea {
 #submit {
   width: 100%;
   text-align: center;
+  margin-top:20px;
 }
 
 button {
@@ -297,10 +298,16 @@ a.link {
   position: relative;
 }
 
-.email-success, .email-failed {
+.email-success {
   display: none;
   font-size: 14px;
   margin-top: 10px;
+}
+
+.message-required, .email-required {
+  display: none;
+  align-self: start;
+  font-size: 12px;
 }
 
 /* media query - phones */
