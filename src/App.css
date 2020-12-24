@@ -297,6 +297,12 @@ a.link {
   position: relative;
 }
 
+.email-success, .email-failed {
+  display: none;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
 /* media query - phones */
 @media (max-width: 460px) {
   .contact-nav {

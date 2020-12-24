@@ -21,6 +21,8 @@ export default function Contact() {
     const [ contactAnimShow, setContactAnimShow ] = useState(false)
     const [ email, setEmail ] = useState({...initialState})
 
+    const successMessage = document.querySelector(".email-success")
+    const failedMessage = document.querySelector(".email-failed")
 
     useEffect(() => {
         setContactAnimShow(true)
@@ -29,7 +31,6 @@ export default function Contact() {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(email)
         fetch("http://localhost:4000/", {
             method: "POST",
             headers: {
@@ -42,8 +43,26 @@ export default function Contact() {
                 subject: email.subject,
                 message: email.message
             })
-        }).then(console.log())
-        // .then(setEmail({...initialState}))
+        }).then(response => response.json())
+        .then(console.log)
+    }
+
+    const renderResponse = (result) => {
+        if (result === "success") {
+            setEmail({...initialState})
+            successMessage.style.display = "flex"
+            resetResponseMessage()
+        } else {
+            failedMessage.style.display = "flex"
+            resetResponseMessage()
+        }
+    }
+
+    const resetResponseMessage = () => {
+        setTimeout(() => {
+            successMessage.style.display = "none";
+            failedMessage.style.display = "none";
+        }, 10000)
     }
 
     return (
@@ -94,6 +113,8 @@ export default function Contact() {
                                 onChange={(event) => setEmail({...email, message: event.target.value})}
                             />
                             <Button animate id="submit" type="submit">submit</Button>
+                            <p className="email-success"><Words animate layer="success">email sent!</Words></p>
+                            <p className="email-failed"><Words animate layer="alert">email failed!  try again!</Words></p>
                         </form>
                     </div>
                 </div>
