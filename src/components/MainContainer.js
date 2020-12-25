@@ -15,7 +15,6 @@ export default function MainContainer() {
 
     useEffect(() => {
         setMainAnimShow(!mainAnimShow)
-        return () => setMainAnimShow(!mainAnimShow)
     }, [])
 
     const showPage = {

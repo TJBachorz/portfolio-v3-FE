@@ -56,12 +56,8 @@ header.header {
   margin-top: 0px;
 }
 
-
 .nav-bar, .projects-nav, .contact-nav {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-flow: row;
   justify-content: space-around;
   align-items: stretch;
   border: 1px solid;
@@ -83,7 +79,6 @@ header.header {
 
 .data-block {
   display: flex;
-  flex-direction: row;
   align-items: baseline;
 }
 
@@ -103,8 +98,7 @@ header.header {
 .bio-page-container  {
   width: 90%;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
   padding:5px;
@@ -113,7 +107,6 @@ header.header {
 
 .total-project-container {
   display:flex;
-  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   width: 90%;
@@ -133,9 +126,7 @@ img.tech-used, .contact-image {
   padding: 8px;
   opacity: 1;
   margin: 2px;
-  position: relative;
   transition: all 250ms ease-in-out;
-
 }
 
 .link:hover {
@@ -150,18 +141,15 @@ img.contact-image {
 
 .project-link-container, .techs {
   display:flex;
-  flex-direction: row;
-  flex-flow: wrap;
+  flex-flow: row wrap;
 }
 
 .techs {
   display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 20px;
   width: 80%;
   margin-bottom: 20px;
 }
@@ -190,8 +178,6 @@ img.primary-img, img.resume-image {
   max-width: 330px;
   display: block;
   padding:10px;
-  position: relative;
-  z-index: 0
 }
 
 .info-and-image, .project-tab, .contact-link {
@@ -206,7 +192,6 @@ img.primary-img, img.resume-image {
 
 .resume-and-email {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 40px;
@@ -229,10 +214,6 @@ input, textarea {
 
 .email-me {
   transition: all 250ms ease-in-out;
-  /* display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
 }
 
 #submit {
@@ -278,7 +259,6 @@ a.link {
   max-height: 50px;
   max-width: 50px;
   margin-top: 8px;
-  display:none;
 }
 
 .contact-form, .resume-container {
@@ -291,21 +271,21 @@ a.link {
   background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://i.gifer.com/757a.gif");
   margin: 1px;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  position: relative;
+}
+
+.message-required, .email-required, .email-success, .soc-med-image {
+  display: none;
 }
 
 .email-success {
-  display: none;
   font-size: 14px;
   margin-top: 10px;
 }
 
 .message-required, .email-required {
-  display: none;
   align-self: start;
   font-size: 12px;
 }
