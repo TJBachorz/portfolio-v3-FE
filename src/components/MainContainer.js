@@ -8,9 +8,8 @@ import Contact from './Contact';
 
 import { Frame, Animation } from 'arwes';
 
-export default function MainContainer() {
+export default function MainContainer({ selectedPage }) {
 
-    const [selectedPage, setSelectedPage] = useState("bio")
     const [ mainAnimShow, setMainAnimShow ] = useState(false)
 
     useEffect(() => {
@@ -26,7 +25,7 @@ export default function MainContainer() {
     let baseStyle = {
         width: '0vw',
         transition: 'all 400ms ease-out',
-        height: '5vh',
+        height: '35px',
         position: 'relative',
         overflow: 'auto'
     }
@@ -84,10 +83,10 @@ export default function MainContainer() {
                         layer='primary'
                     >
                         <div animate className="main-container" style={{...baseStyle, ...pageStyle(anim)}}>
-                            <Navbar 
+                            {/* <Navbar 
                                 selectedPage={selectedPage}
                                 setSelectedPage={setSelectedPage}
-                            />
+                            /> */}
                             <div className="info-and-image">
                                 {showPage[selectedPage]}
                             </div>

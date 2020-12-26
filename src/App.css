@@ -64,6 +64,14 @@ header.header {
   width: 100%;
 }
 
+div.nav-bar {
+  width:80vw;
+}
+
+.divider {
+  margin-bottom: 10px;
+}
+
 .nav-item, .project-item, .link {
   margin: 0;
   width:100%;
@@ -79,7 +87,7 @@ header.header {
 
 .data-block {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .bio-data {
@@ -104,6 +112,14 @@ header.header {
   padding:5px;
   margin-top:35px;
 }
+
+/* .main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+} */
 
 .total-project-container {
   display:flex;
@@ -178,6 +194,10 @@ img.primary-img, img.resume-image {
   max-width: 330px;
   display: block;
   padding:10px;
+}
+
+.info-and-image {
+  overflow: scroll;
 }
 
 .info-and-image, .project-tab, .contact-link {

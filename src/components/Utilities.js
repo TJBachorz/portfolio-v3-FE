@@ -52,12 +52,6 @@ export const renderTechImages = (techHash) => {
     })
 }
 
-export const overflow = () => {
-    setTimeout(() => {
-        return {overflow: "auto"}
-    }, 2000)
-}
-
 export const looksyBackupGIFS = ["https://j.gifs.com/ZYP52R.gif", "https://j.gifs.com/BNkzVN.gif"]
 
 

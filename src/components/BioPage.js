@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { bioPageSkills, overflow, renderTechImages } from './Utilities';
+import { bioPageSkills, renderTechImages } from './Utilities';
 
 import { Words, Frame, Animation } from 'arwes';
+
+import selfPortrait from '../assets/tj-cropped.jpg';
 
 export default function BioPage() {
 
@@ -20,18 +22,18 @@ export default function BioPage() {
         <Animation show={animShow} animate timeout={2000}>
             {anim => (
                 <>
-                    <section className="bio-page-container" style={overflow()}>
+                    <section className="bio-page-container">
                         <div className="bio-info">
                             <div className="data-block-container">
-                                <div className="data-block">
+                                <div className="my-name data-block">
                                     <p className="bio-data"><Words show={animShow} animate>subject_name:</Words></p> 
                                     <p className="answer"><Words show={animShow} animate>Thomas Bachorz</Words></p>
                                 </div>
-                                <div className="data-block">
+                                <div className="nickname data-block">
                                     <p className="bio-data"><Words show={animShow} animate>nickname:</Words></p>
                                     <p className="answer"><Words show={animShow} animate>TJ</Words></p>
                                 </div>
-                                <div className="data-block">
+                                <div className="occupation data-block">
                                     <p className="bio-data"><Words show={animShow} animate>occupation:</Words></p>
                                     <p className="answer"><Words show={animShow} animate>Full-Stack Software Developer</Words></p>
                                 </div>
@@ -55,7 +57,7 @@ export default function BioPage() {
                                 layer='secondary'
                             >
                                 <div className="fuzzy-background">
-                                    <img className="primary-img" src="https://as2.ftcdn.net/jpg/02/60/78/83/500_F_260788352_x5sSHM4DGvpjHj9wz8sFltzAPktQwJCj.jpg" alt="project gif"/>
+                                    <img className="primary-img" src={selfPortrait} alt="project gif"/>
                                 </div>
                             </Frame>
                         </div>

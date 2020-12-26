@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { ABCTech, overflow, renderTechImages } from './Utilities';
+import { ABCTech, renderTechImages } from './Utilities';
 
 import { Words, Frame } from 'arwes';
 
@@ -18,7 +18,7 @@ export default function ABCdl() {
 
     return (
         <>
-            <div className="total-project-container" style={overflow()}>
+            <div className="total-project-container">
                 <div className="project-info">
                     <h2><Words animate >ABC Data Logger</Words></h2>
                     <div className="project-link-container">

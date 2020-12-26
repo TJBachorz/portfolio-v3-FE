@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import MainContainer from './components/MainContainer';
+
 
 import './App.css';
 
 import { ThemeProvider, createTheme, Arwes, Puffs, Header, Words } from 'arwes';
-
+import MainOuterContainer from './components/MainOuterContainer';
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
                       <h4><Words animate>subject_file:  THOMAS_BACHORZ</Words></h4>
                     </Header>
                   </div>
-                  <MainContainer/>
+                  <MainOuterContainer/>
                 </main>
               </>
           </Arwes>

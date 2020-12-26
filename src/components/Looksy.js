@@ -77,12 +77,11 @@ export default function Looksy() {
                     corners={1}
                     layer='secondary'
                 >
-                <div className="fuzzy-background">
-                    {renderTechImages(looksyTech)}
-                </div>
+                    <div className="fuzzy-background">
+                        {renderTechImages(looksyTech)}
+                    </div>
                 </Frame>
             </div>
         </>
     )
-    // <iframe src='//gifs.com/embed/looksy-1-ZYP52R' frameborder='0' scrolling='no' width='172px' height='360px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>
 }

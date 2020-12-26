@@ -39,7 +39,7 @@ export default function Projects() {
     return (
         <Animation >
             {anim => (
-                <div className="projects-tab-container" style={overflow()}>
+                <div className="projects-tab-container">
                     <div className="projects-nav">
                         <div className="ABC project-tab" style={invertColor("ABC")}>
                             <h5 className="ABC project-item" onClick={makeTargetProject}><Words animate>ABC Data Logger</Words></h5>

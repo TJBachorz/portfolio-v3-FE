@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function Navbar({ selectedPage, setSelectedPage }) {
 
-    
     const makeTargetPage = (event) => {
         const page = event.currentTarget.className.split(" ")[0];
         setSelectedPage(page)
