@@ -10,19 +10,11 @@ export default function MainOuterContainer() {
     const [selectedPage, setSelectedPage] = useState("bio")
 
     return (
-        <>
-            <Frame
-                className="frame"
-                animate={true}
-                level={3}
-                corners={4}
-                layer='primary'
-            >
-                <Navbar
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                />
-            </Frame>
+        <> 
+            <Navbar
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+            />
             <div className="divider"></div>
             <MainContainer
                 selectedPage={selectedPage}

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import Navbar from './Navbar';
 import BioPage from './BioPage';
 import Projects from './Projects';
 import Contact from './Contact';
-// import { overflow } from './Utilities';
 
 import { Frame, Animation } from 'arwes';
 
@@ -12,9 +10,7 @@ export default function MainContainer({ selectedPage }) {
 
     const [ mainAnimShow, setMainAnimShow ] = useState(false)
 
-    useEffect(() => {
-        setMainAnimShow(!mainAnimShow)
-    }, [])
+    useEffect(() => setMainAnimShow(!mainAnimShow), [])
 
     const showPage = {
         "bio": <BioPage/>,
@@ -24,50 +20,27 @@ export default function MainContainer({ selectedPage }) {
 
     let baseStyle = {
         width: '0vw',
-        transition: 'all 400ms ease-out',
+        transition: 'all 400ms ease-in-out',
         height: '35px',
         position: 'relative',
-        overflow: 'auto'
+        opacity: '0'
     }
 
     const pageStyle = (anim) => {
-        if (selectedPage === "bio"){
             const style = {
                 entering: {
                     width: "80vw",
+                    opacity: '0.1'
                 },
                 entered: {
                     width: "80vw",
                     height:'75vh',
+                    opacity: '1',
+                    overflow: 'auto',
                 }
             }
             return {...style[anim.status]}
         }
-        if (selectedPage === "projects"){
-            const style = {
-                entering: {
-                    width: "80vw"
-                },
-                entered: {
-                    width: "80vw",
-                    height: "80vh",
-                }
-            }
-            return {...style[anim.status]}
-        }
-        if (selectedPage === "contact"){
-            const style = {
-                entering: {
-                    width: "80vw"
-                },
-                entered: {
-                    width: "80vw",
-                    height: "75vh",
-                }
-            }
-            return {...style[anim.status]}
-        }
-    }
     
     return (
         <div>
@@ -83,10 +56,6 @@ export default function MainContainer({ selectedPage }) {
                         layer='primary'
                     >
                         <div animate className="main-container" style={{...baseStyle, ...pageStyle(anim)}}>
-                            {/* <Navbar 
-                                selectedPage={selectedPage}
-                                setSelectedPage={setSelectedPage}
-                            /> */}
                             <div className="info-and-image">
                                 {showPage[selectedPage]}
                             </div>
