@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { bioPageSkills, renderTechImages } from './Utilities';
 
-import { Words, Frame, Animation } from 'arwes';
+import { Words, Frame } from 'arwes';
 
 import selfPortrait from '../assets/tj-cropped.jpg';
 
@@ -12,9 +12,7 @@ export default function BioPage() {
 
     useEffect(() => {
         setTimeout(() => {
-            if (animShow === false) {
-                setAnimShow(!animShow)
-            }
+            setAnimShow(!animShow)
         }, 100)
     }, [])
 

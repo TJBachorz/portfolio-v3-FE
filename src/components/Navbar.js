@@ -18,12 +18,9 @@ export default function Navbar({ selectedPage, setSelectedPage }) {
     }
     
     const checkIfActive = (pageName) => {
-        if (pageName === selectedPage) {
-            return {
-                backgroundColor: '#27dafd',
-                color: '#010506'
-            }
-        }
+        return pageName === selectedPage ? 
+            { backgroundColor: '#27dafd', color: '#010506'} 
+            : null
     }
 
     const baseStyle = {

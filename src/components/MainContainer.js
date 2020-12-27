@@ -10,7 +10,11 @@ export default function MainContainer({ selectedPage }) {
 
     const [ mainAnimShow, setMainAnimShow ] = useState(false)
 
-    useEffect(() => setMainAnimShow(!mainAnimShow), [])
+    useEffect(() => {
+        setTimeout(() => {
+            setMainAnimShow(!mainAnimShow)
+        }, 50)
+    }, [])
 
     const showPage = {
         "bio": <BioPage/>,
@@ -20,27 +24,27 @@ export default function MainContainer({ selectedPage }) {
 
     let baseStyle = {
         width: '0vw',
-        transition: 'all 400ms ease-in-out',
+        transition: 'all 350ms ease-in-out',
         height: '35px',
         position: 'relative',
         opacity: '0'
     }
 
     const pageStyle = (anim) => {
-            const style = {
-                entering: {
-                    width: "80vw",
-                    opacity: '0.1'
-                },
-                entered: {
-                    width: "80vw",
-                    height:'75vh',
-                    opacity: '1',
-                    overflow: 'auto',
-                }
+        const style = {
+            entering: {
+                width: "80vw",
+                opacity: '0.1'
+            },
+            entered: {
+                width: "80vw",
+                height:'75vh',
+                opacity: '1',
+                overflow: 'auto',
             }
-            return {...style[anim.status]}
         }
+        return {...style[anim.status]}
+    }
     
     return (
         <div>

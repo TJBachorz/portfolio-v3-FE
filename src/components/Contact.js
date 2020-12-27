@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Animation, Words, Frame, Button } from 'arwes';
+import { Words, Frame, Button } from 'arwes';
 
 import resumePDF from '../assets/TJ_Bachorz_Resume.pdf';
 import resumeImage from '../assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpeg';

@@ -10,9 +10,7 @@ export default function ABCdl() {
 
     useEffect(() => {
         setTimeout(() => {
-            if (animShow === false) {
-                setAnimShow(!animShow)
-            }
+            setAnimShow(!animShow)
         }, 100)
     }, [])
 

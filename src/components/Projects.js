@@ -13,7 +13,9 @@ export default function Projects() {
     const [ animShow, setAnimShow ] = useState(false)
 
     useEffect(() => {
-        setAnimShow(!animShow)
+        setTimeout(() => {
+            setAnimShow(!animShow)
+        }, 100)
     }, [])
 
     const makeTargetProject = (event) => {
@@ -22,12 +24,9 @@ export default function Projects() {
     }
 
     const invertColor = (projectName) => {
-        if (projectName === selectedProject) {
-            return {
-                backgroundColor: '#27dafd',
-                color: '#010506'
-            }
-        }
+        return projectName === selectedProject ?
+            { backgroundColor: '#27dafd', color: '#010506' }
+            : null
     }
 
     const showProjects = {

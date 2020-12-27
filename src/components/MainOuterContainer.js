@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import MainContainer from './MainContainer';
 import Navbar from './Navbar';
 
-import { Frame } from 'arwes';
-
 export default function MainOuterContainer() {
 
     const [selectedPage, setSelectedPage] = useState("bio")
