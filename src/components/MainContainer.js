@@ -9,7 +9,7 @@ import { Frame, Animation } from 'arwes';
 export default function MainContainer({ selectedPage }) {
 
     const [ mainAnimShow, setMainAnimShow ] = useState(false)
-
+    
     useEffect(() => {
         setTimeout(() => {
             setMainAnimShow(!mainAnimShow)
@@ -59,9 +59,9 @@ export default function MainContainer({ selectedPage }) {
                         layer='primary'
                     >
                         <div className="main-container" style={{...baseStyle, ...pageStyle(anim)}}>
-                            <div className="info-and-image">
+                            {/* <div className="info-and-image"> */}
                                 {showPage[selectedPage]}
-                            </div>
+                            {/* </div> */}
                         </div>
                     </Frame>
                 )}

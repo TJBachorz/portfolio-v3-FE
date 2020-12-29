@@ -57,20 +57,22 @@ export default function BioPage() {
                         </div>
                     </Frame>
                 </div>
-                <div className="techs">
-                    <h6 className="tech-label"><Words show={animShow} animate>Skills:</Words></h6>
-                    <Frame
-                        className="frame"
-                        show={animShow}
-                        animate
-                        level={2}
-                        corners={1}
-                        layer='secondary'
-                        >
-                        <div className="fuzzy-background">
-                            {renderTechImages(bioPageSkills)}
-                        </div>
-                    </Frame>
+                <div className="width100">
+                    <div className="skills techs">
+                        <h6 className="tech-label"><Words show={animShow} animate>Skills:</Words></h6>
+                        <Frame
+                            className="frame"
+                            show={animShow}
+                            animate
+                            level={2}
+                            corners={1}
+                            layer='secondary'
+                            >
+                            <div className="fuzzy-background">
+                                {renderTechImages(bioPageSkills)}
+                            </div>
+                        </Frame>
+                    </div>
                 </div>
             </section>
         </>

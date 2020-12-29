@@ -1,4 +1,4 @@
-import React, {Logbox} from 'react';
+import React from 'react';
 
 import './App.css';
 

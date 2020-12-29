@@ -21,6 +21,12 @@ main {
   transition: all 250ms ease-out;
 }
 
+.width100 {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+}
+
 h1 {
   display: block;
   text-align: left;
@@ -41,7 +47,7 @@ header.header {
   margin-bottom: 40px; 
   background: transparent; 
   width: 80vw; 
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .total-contact-container, .projects-tab-container {
@@ -80,7 +86,7 @@ header.header {
 
 .data-block {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .bio-data {
@@ -97,7 +103,7 @@ header.header {
 }
 
 .bio-page-container  {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
@@ -110,7 +116,7 @@ header.header {
   display:flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 90%;
+  width: 100%;
   padding:5px;
   margin-top: 35px;
   margin-bottom: 15px;
@@ -148,6 +154,10 @@ img.tech-used {
   margin-top: 20px;
   width: 80%;
   margin-bottom: 20px;
+}
+
+.skills {
+  margin-top: 30px;
 }
 
 .project-info, .bio-info, .contact-info {
@@ -192,6 +202,10 @@ img.primary-img, img.resume-image {
   align-items: center;
   width: 100%;
   overflow: hidden;
+}
+
+.info-and-image {
+  height: auto;
 }
 
 .resume-and-email {
@@ -293,6 +307,47 @@ a.link {
 .message-required, .email-required {
   align-self: start;
   font-size: 12px;
+}
+
+@media (max-width: 1366px) and (max-height: 1024px) {
+  .bio-page-container, .projects-tab-container, .total-contact-container {
+    margin-top: 75px;
+  }
+  .skills {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 1024px) and (max-height: 1366px) {
+  .bio-page-container, .total-project-container {
+    margin-top: 80px;
+  }
+  .total-contact-container {
+    margin-top: 40px;
+  }
+  .resume-and-email{
+    flex-direction: column;
+  }
+  .download-resume {
+    margin-bottom: 50px;
+  }
+  #submit {
+    margin-bottom: 45px;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 1024px) {
+  .bio-page-container, .total-project-container {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .bio-info, .project-info {
+    margin-bottom: 30px;
+    width: 90%;
+  }
+  .techs, .skills {
+    margin-top: 20px;
+    width: 80%;
+  }
 }
 
 /* media query - phones */

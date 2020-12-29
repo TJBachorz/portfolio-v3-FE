@@ -37,7 +37,7 @@ export default function Projects() {
     return (
         <Animation >
             {anim => (
-                <div className="projects-tab-container">
+                <>
                     <div className="projects-nav">
                         <div className="ABC project-tab" style={invertColor("ABC")}>
                             <h5 className="ABC project-item" onClick={makeTargetProject}><Words animate>ABC Data Logger</Words></h5>
@@ -49,8 +49,10 @@ export default function Projects() {
                             <h5 className="looksy project-item" onClick={makeTargetProject}><Words animate>Looksy</Words></h5>
                         </div>
                     </div>
+                    {/* <div className="projects-tab-container"> */}
                     {showProjects[selectedProject]}
-                </div>
+                    {/* </div> */}
+                </>
             )}
         </Animation>
     )

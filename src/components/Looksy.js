@@ -64,20 +64,22 @@ export default function Looksy() {
                     </Frame>
                 </div>
             </div>
-            <div className="techs">
-                <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
-                <Frame
-                    className="frame"
-                    show={animShow}
-                    animate
-                    level={3}
-                    corners={1}
-                    layer='secondary'
-                >
-                    <div className="fuzzy-background">
-                        {renderTechImages(looksyTech)}
-                    </div>
-                </Frame>
+            <div className="width100">
+                <div className="techs"> 
+                    <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
+                    <Frame
+                        className="frame"
+                        show={animShow}
+                        animate
+                        level={3}
+                        corners={1}
+                        layer='secondary'
+                    >
+                        <div className="fuzzy-background">
+                            {renderTechImages(looksyTech)}
+                        </div>
+                    </Frame>
+                </div>
             </div>
         </>
     )

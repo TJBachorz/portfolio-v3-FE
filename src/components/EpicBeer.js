@@ -48,19 +48,21 @@ export default function EpicBeer() {
                     </Frame>
                 </div>
             </div>
-            <div className="techs">
-                <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
-                <Frame
-                    show={animShow}
-                    animate
-                    level={3}
-                    corners={1}
-                    layer='secondary'
-                >
-                    <div className="fuzzy-background">
-                        {renderTechImages(epicBeerTech)}
-                    </div>
-                </Frame>
+            <div className="width100">
+                <div className="techs">
+                    <h6 className="tech-label"><Words animate>Tech used:</Words></h6>
+                    <Frame
+                        show={animShow}
+                        animate
+                        level={3}
+                        corners={1}
+                        layer='secondary'
+                    >
+                        <div className="fuzzy-background">
+                            {renderTechImages(epicBeerTech)}
+                        </div>
+                    </Frame>
+                </div>
             </div>
         </>
     )
