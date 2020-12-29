@@ -14,9 +14,7 @@ export default function MainOuterContainer() {
                 setSelectedPage={setSelectedPage}
             />
             <div className="divider"></div>
-            <MainContainer
-                selectedPage={selectedPage}
-            />
+            <MainContainer selectedPage={selectedPage}/>
         </>
     )
 }

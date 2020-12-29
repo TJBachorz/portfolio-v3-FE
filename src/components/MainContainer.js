@@ -53,13 +53,12 @@ export default function MainContainer({ selectedPage }) {
                     <Frame
                         className="frame"
                         show={mainAnimShow}
-                        animate={true}
-                        appear
+                        animate
                         level={3}
                         corners={6}
                         layer='primary'
                     >
-                        <div animate className="main-container" style={{...baseStyle, ...pageStyle(anim)}}>
+                        <div className="main-container" style={{...baseStyle, ...pageStyle(anim)}}>
                             <div className="info-and-image">
                                 {showPage[selectedPage]}
                             </div>

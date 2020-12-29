@@ -44,11 +44,13 @@ export const looksyTech = {
     AR: ARCube
 }
 
+export const mailerURL = "https://personal-site-sendgrid-mailer.herokuapp.com"
+
 export const renderTechImages = (techHash) => {
     const techEntries = Object.entries(techHash)
     return techEntries.map(techEntry => {
         const [tech, src] = techEntry
-        return <img className="tech-used" src={src} alt={tech}/>
+        return <img className="tech-used" key={tech} src={src} alt={tech}/>
     })
 }
 

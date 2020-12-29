@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { Words, Frame, Button } from 'arwes';
 
+import { mailerURL } from './Utilities';
+
 import resumePDF from '../assets/TJ_Bachorz_Resume.pdf';
 import resumeImage from '../assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpeg';
 import linkedin from '../assets/linkedin.png';
@@ -44,18 +46,13 @@ export default function Contact() {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        fetch("http://localhost:4000/", {
+        fetch(`${mailerURL}/mail`, {
             method: "POST",
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                full_name: email.full_name,
-                from: email.from,
-                subject: email.subject,
-                message: email.message
-            })
+            body: JSON.stringify(email)
         }).then(response => response.json())
         .then(renderResponse)
     }
@@ -116,11 +113,13 @@ export default function Contact() {
                             value={email.full_name} 
                             onChange={(event) => setEmail({...email, full_name: event.target.value})}
                         />
+                        
                         <input id="user-email" className="form-item" type="text" name="from" placeholder="user_email" 
                             value={email.from} 
                             onChange={(event) => setEmail({...email, from: event.target.value})}
                         />
                         <p className="email-required"><Words show={contactAnimShow} animate layer="alert">* valid_email_required</Words></p>
+                        
                         <input id="subject" className="form-item" type="text" name="subject" placeholder="message_subject" 
                             value={email.subject} 
                             onChange={(event) => setEmail({...email, subject: event.target.value})}
@@ -130,7 +129,7 @@ export default function Contact() {
                             onChange={(event) => setEmail({...email, message: event.target.value})}
                         />
                         <p className="message-required"><Words show={contactAnimShow} animate layer="alert">* required</Words></p>
-
+                        
                         <Button show={contactAnimShow} animate id="submit" type="submit">submit</Button>
                         <p className="email-success"><Words layer="success">email sent!</Words></p>
                     </form>

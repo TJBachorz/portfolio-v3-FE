@@ -57,9 +57,9 @@ export default function ABCdl() {
                     corners={1}
                     layer='secondary'
                 >
-                <div className="fuzzy-background">
-                    {renderTechImages(ABCTech)}
-                </div>
+                    <div className="fuzzy-background">
+                        {renderTechImages(ABCTech)}
+                    </div>
                 </Frame>
             </div>
         </>

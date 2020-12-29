@@ -58,13 +58,12 @@ export default function Navbar({ selectedPage, setSelectedPage }) {
                     <Frame
                         className="frame"
                         show={navAnimShow}
-                        animate={true}
+                        animate
                         level={3}
                         corners={4}
                         layer='primary'
                     >
                         <div className="nav-bar" style={{...baseStyle, ...pageStyle[anim.status]}}>
-                            {console.log(anim.status)}
                             <h5 className="bio nav-item" style={checkIfActive("bio")} onClick={makeTargetPage}>Bio</h5>
                             <h5 className="projects nav-item" style={checkIfActive("projects")} onClick={makeTargetPage}>Projects</h5>
                             <h5 className="contact nav-item" style={checkIfActive("contact")} onClick={makeTargetPage}>Contact</h5>

@@ -47,7 +47,7 @@ export default function BioPage() {
                     <Frame
                         className="frame"
                         show={animShow}
-                        animate={true}
+                        animate
                         level={3}
                         corners={2}
                         layer='secondary'
@@ -62,7 +62,7 @@ export default function BioPage() {
                     <Frame
                         className="frame"
                         show={animShow}
-                        animate={true}
+                        animate
                         level={2}
                         corners={1}
                         layer='secondary'

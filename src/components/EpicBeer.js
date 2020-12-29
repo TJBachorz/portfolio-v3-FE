@@ -57,9 +57,9 @@ export default function EpicBeer() {
                     corners={1}
                     layer='secondary'
                 >
-                <div className="fuzzy-background">
-                    {renderTechImages(epicBeerTech)}
-                </div>
+                    <div className="fuzzy-background">
+                        {renderTechImages(epicBeerTech)}
+                    </div>
                 </Frame>
             </div>
         </>

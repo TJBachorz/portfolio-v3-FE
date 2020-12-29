@@ -5,7 +5,6 @@ import EpicBeer from './EpicBeer';
 import Looksy from './Looksy';
 
 import { Words, Animation } from 'arwes';
-import { overflow } from './Utilities';
 
 export default function Projects() {
 
