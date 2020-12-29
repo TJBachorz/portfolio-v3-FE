@@ -16,8 +16,8 @@ export default function EpicBeer() {
 
     return (
         <>
-            <div className="total-project-container">
-                <div className="project-info">
+            <div className="epic-beer total-project-container">
+                <div className="epic-beer-info project-info">
                     <h2><Words animate>Epic Beer Run</Words></h2>
                     <div className="project-link-container">
                         <p className="project-links"><a rel="noreferrer" target="_blank" href="https://github.com/TJBachorz/Epic-Beer-Run-FE"><Words animate>Frontend</Words></a></p>

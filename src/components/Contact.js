@@ -108,7 +108,7 @@ export default function Contact() {
                     <div className="email-me">
                         <form id="email-form" onSubmit={handleSubmit} className="contact-form">
                             <Words show={contactAnimShow} className="label" animate>
-                                contact_subject:
+                                email_subject:
                             </Words>
                             <input id="full-name" className="form-item" type="text" name="full_name" placeholder="user_full_name" 
                                 value={email.full_name} 
