@@ -2,11 +2,12 @@
 
 * { font-family: 'Orbitron', sans-serif; }
 
-html, body { background-color:black; }
+html, body { background-color:#000204; }
+
+.main-frame { margin-bottom: 20px; }
 
 main {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/08800aef-a1c3-4ac3-be7e-032bd085f169/d4f7xkv-6294abc9-f372-4550-9164-f198b6365ed0.png/v1/fill/w_1131,h_707,q_70,strp/blue_space_by_darkdissolution_d4f7xkv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMjAwIiwicGF0aCI6IlwvZlwvMDg4MDBhZWYtYTFjMy00YWMzLWJlN2UtMDMyYmQwODVmMTY5XC9kNGY3eGt2LTYyOTRhYmM5LWYzNzItNDU1MC05MTY0LWYxOThiNjM2NWVkMC5wbmciLCJ3aWR0aCI6Ijw9MTkyMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.Ss-6n9pb6rRxrF7U7_A5o-Zo826jnK_-PzQjLZB8D8c");
-  background-size: cover;
+  background-size: contain;
   background-attachment: fixed;
   width: 100%;
   height: 100%;
@@ -15,6 +16,10 @@ main {
   justify-content: baseline;
   align-items: center;
   transition: all 250ms ease-out;
+}
+
+.Arwes-main-0-1-9 {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/08800aef-a1c3-4ac3-be7e-032bd085f169/d4f7xkv-6294abc9-f372-4550-9164-f198b6365ed0.png/v1/fill/w_1131,h_707,q_70,strp/blue_space_by_darkdissolution_d4f7xkv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMjAwIiwicGF0aCI6IlwvZlwvMDg4MDBhZWYtYTFjMy00YWMzLWJlN2UtMDMyYmQwODVmMTY5XC9kNGY3eGt2LTYyOTRhYmM5LWYzNzItNDU1MC05MTY0LWYxOThiNjM2NWVkMC5wbmciLCJ3aWR0aCI6Ijw9MTkyMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.Ss-6n9pb6rRxrF7U7_A5o-Zo826jnK_-PzQjLZB8D8c");
 }
 
 .width100 {
@@ -63,7 +68,7 @@ header.header {
   width: 100%;
 }
 
-.divider { margin-bottom: 12px; }
+.divider { margin-bottom: 14px; }
 
 .nav-item, .project-item, .link {
   margin: 0;
@@ -170,6 +175,8 @@ img.primary-img, img.resume-image {
   padding:10px;
   animation: fade-in .75s linear 0s 1 forwards;
 }
+
+img.resume-image { margin-bottom: 15px; }
 
 @keyframes fade-in {
   0% {opacity: 0}
@@ -324,12 +331,41 @@ a.link { color: #27dafd; }
 }
 
 /* phone responsiveness */
+
+@media (max-width: 850px) and (max-height: 850px) {
+  .bio-page-container, .total-project-container {
+    flex-direction: column;
+  }
+  .bio-info, .project-info { width: 90%; }
+  .bio-page-container, .total-contact-container { margin-top: 20px; }
+  .total-project-container { margin-top: 0px;}
+  .width100 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+}
+
 @media (max-width: 460px) {
   .contact-nav {
     background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://i.gifer.com/757a.gif");
   }
-  
   .link { display:none; }
-  
   .soc-med-image { display:inline-flex; }
+  img.primary-img {
+    max-width: 250px;
+  }
+  .techs { margin: 0px;}
 } 
+
+@media (max-width: 360px) {
+  img.primary-img {
+    max-width: 190px;
+  }
+  h4 > span.header-text > span { font-size: 18px; }
+  img.resume-image {
+    max-width: 190px;
+  }
+}
+
+@media (max-width: 320px) {
+}

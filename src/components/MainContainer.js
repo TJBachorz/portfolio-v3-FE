@@ -51,7 +51,7 @@ export default function MainContainer({ selectedPage }) {
             <Animation show={mainAnimShow} animate timeout={1000}>
                 {anim => (
                     <Frame
-                        className="frame"
+                        className="main-frame"
                         show={mainAnimShow}
                         animate
                         level={3}

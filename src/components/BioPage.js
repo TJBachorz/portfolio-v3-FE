@@ -67,7 +67,7 @@ export default function BioPage() {
                             level={2}
                             corners={1}
                             layer='secondary'
-                            >
+                        >
                             <div className="fuzzy-background">
                                 {renderTechImages(bioPageSkills)}
                             </div>

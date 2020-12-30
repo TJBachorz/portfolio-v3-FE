@@ -15,7 +15,7 @@ function App() {
           <Arwes className="arwes">
               <main>
                 <Header className="header" animate>
-                  <h4><Words animate>subject_file:  THOMAS_BACHORZ</Words></h4>
+                  <h4><Words className="header-text" animate>subject_file:&nbsp; THOMAS_BACHORZ</Words></h4>
                 </Header>
                 <MainOuterContainer/>
               </main>
