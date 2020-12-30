@@ -43,11 +43,20 @@ export default function Looksy() {
                         <p className="separator"><Words animate>|</Words></p>
                         <p className="project-links"><a rel="noreferrer" target="_blank" href="https://www.youtube.com/watch?v=HPJ6KVPMPac"><Words animate>Demo</Words></a></p>
                     </div>
-                    <ul>
-                        <li><Words animate>Utilized Ruby on Rails back-end API to persist user and 3D modeling data using JWT auth.</Words></li>
-                        <li><Words animate>Incorporated second database using Node with Express JS and AWS for URL returns on profile picture uploads.</Words></li>
-                        <li><Words animate>Leveraged Google’s model-viewer augmented reality tech to render 3D models in natural environments.</Words></li>
-                    </ul>
+                    <div className="project-list-container">
+                        <div className="list-item-container">
+                            <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" animate>Utilized Ruby on Rails back-end API to persist user and 3D modeling data using JWT auth.</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" animate>Incorporated second database using Node with Express JS and AWS for URL returns on profile picture uploads.</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" animate>Leveraged Google’s model-viewer augmented reality tech to render 3D models in natural environments.</Words>
+                        </div>
+                    </div>  
                 </div>
                 <div className="project-image-container">
                     <Frame

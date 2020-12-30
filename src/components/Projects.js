@@ -49,9 +49,7 @@ export default function Projects() {
                             <h5 className="looksy project-item" onClick={makeTargetProject}><Words animate>Looksy</Words></h5>
                         </div>
                     </div>
-                    {/* <div className="projects-tab-container"> */}
                     {showProjects[selectedProject]}
-                    {/* </div> */}
                 </>
             )}
         </Animation>

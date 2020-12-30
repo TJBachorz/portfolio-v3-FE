@@ -26,11 +26,20 @@ export default function ABCdl() {
                         <p className="separator"><Words animate>|</Words></p>
                         <p className="project-links"><a rel="noreferrer" target="_blank" href="https://www.loom.com/share/ceb43bedf201465f8bec3eee151d2bbd"><Words animate>Demo</Words></a></p>
                     </div>
-                    <ul>
-                        <li><Words animate>Harnessed React Native Navigation library to create an intuitive UI and engaging user experience.</Words></li>
-                        <li><Words animate>Implemented Python/Django backend to persist JWT-authenticated user data and make speedy HTTP requests.</Words></li>
-                        <li><Words animate>Engineered the application to function on both iOS and Android devices in preparation of iOS and Google Play Store releases.</Words></li>
-                    </ul>
+                    <div className="project-list-container">
+                        <div className="list-item-container">
+                            <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" animate>Harnessed React Native Navigation library to create an intuitive UI and engaging user experience.</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" animate>Implemented Python/Django backend to persist JWT-authenticated user data and make speedy HTTP requests.</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" animate>Engineered the application to function on both iOS and Android devices in preparation of iOS and Google Play Store releases.</Words>
+                        </div>
+                    </div>
                 </div>
                 <div className="project-image-container">
                     <Frame

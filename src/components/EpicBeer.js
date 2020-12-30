@@ -28,11 +28,20 @@ export default function EpicBeer() {
                         <p className="separator"><Words animate>|</Words></p>
                         <p className="project-links"><a rel="noreferrer" target="_blank" href="https://epic-beer-run.web.app/"><Words animate>Hosted</Words></a></p>
                     </div>
-                    <ul>
-                        <li><Words animate>Formulated a clean, fun, interactive map, utilizing TOPOJSON, react-simple-maps and react-tool-tips.</Words></li>
-                        <li><Words animate>Introduced accessible React Drag-and-Drop UI for instant point-to-point updates.</Words></li>
-                        <li><Words animate>Refined and serialized data pulled from BreweryDB API with Ruby on Rails using rest-client gem.</Words></li>
-                    </ul>
+                    <div className="project-list-container">
+                        <div className="list-item-container">
+                            <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" animate>Formulated a clean, fun, interactive map, utilizing TOPOJSON, react-simple-maps and react-tool-tips.</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" animate>Introduced accessible React Drag-and-Drop UI for instant point-to-point updates.</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" animate>Refined and serialized data pulled from BreweryDB API with Ruby on Rails using rest-client gem.</Words>
+                        </div>
+                    </div>
                 </div>
                 <div className="project-image-container">
                     <Frame

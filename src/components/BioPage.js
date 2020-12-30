@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { bioPageSkills, renderTechImages } from './Utilities';
 
-import { Words, Frame } from 'arwes';
+import { Words, Frame, List } from 'arwes';
 
 import selfPortrait from '../assets/tj-cropped.jpg';
 
@@ -34,14 +34,28 @@ export default function BioPage() {
                             <p className="answer"><Words show={animShow} animate>Full-Stack Software Developer</Words></p>
                         </div>
                     </div>
-                    <ul>
-                        <li><Words show={animShow} animate>Former Professional Filmmaker and Brewer</Words></li>
-                        <li><Words show={animShow} animate>Excellent teamwork and communcation skills</Words></li>
-                        <li><Words show={animShow} animate>Seeks to create software that improves everything from workplace efficiency, to everyday lives</Words></li>
-                        <li><Words show={animShow} animate>Considered dangerously dependable</Words></li>
-                        <li><Words show={animShow} animate>Subject should be approached with extreme enthusiasm</Words></li>
-                    </ul>   
-                    
+                    <div className="list-container">
+                        <div className="list-item-container">
+                            <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" show={animShow} animate>Former Professional Filmmaker and Brewer</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" show={animShow} animate>Excellent teamwork and communcation skills</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" show={animShow} animate>Seeks to create software that improves everything from workplace efficiency, to everyday lives</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" show={animShow} animate>Considered dangerously dependable</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" show={animShow} animate>Subject should be approached with extreme enthusiasm</Words>
+                        </div>
+                    </div>   
                 </div>
                 <div className="bio-image-container">
                     <Frame
