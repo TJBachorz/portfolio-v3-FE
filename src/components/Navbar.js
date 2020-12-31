@@ -4,11 +4,11 @@ import { Animation, Frame } from 'arwes';
 
 export default function Navbar({ selectedPage, setSelectedPage }) {
 
-    const [ navAnimShow, setNavAnimShow ] = useState(false)
+    const [ animShow, setAnimShow ] = useState(false)
 
     useEffect(() => {
-        setTimeout(() => setNavAnimShow(!navAnimShow), 500)
-    }, [])
+        return !animShow ? setTimeout(() => setAnimShow(!animShow), 500) : null
+    }, [animShow])
 
     const makeTargetPage = (event) => {
         const page = event.currentTarget.className.split(" ")[0];
@@ -51,11 +51,11 @@ export default function Navbar({ selectedPage, setSelectedPage }) {
 
     return (
         <>
-            <Animation show={navAnimShow} animate timeout={700}>
+            <Animation show={animShow} animate timeout={700}>
                 {anim => (
                     <Frame
                         className="frame"
-                        show={navAnimShow}
+                        show={animShow}
                         animate
                         level={3}
                         corners={4}

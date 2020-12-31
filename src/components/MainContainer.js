@@ -11,8 +11,8 @@ export default function MainContainer({ selectedPage }) {
     const [ animShow, setAnimShow ] = useState(false)
     
     useEffect(() => {
-        setTimeout(() => setAnimShow(!animShow), 50)
-    }, [])
+        return !animShow ? setTimeout(() => setAnimShow(!animShow), 50) : null
+    }, [animShow])
 
     const showPage = {
         "bio": <BioPage/>,

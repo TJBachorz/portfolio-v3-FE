@@ -26,8 +26,8 @@ export default function Contact() {
     const [ email, setEmail ] = useState({...initialState})
 
     useEffect(() => {
-        setTimeout(() => setAnimShow(!animShow), 100)
-    }, [])
+        return !animShow ? setTimeout(() => setAnimShow(!animShow), 100) : null
+    }, [animShow])
         
     const successMessage = document.querySelector(".email-success")
     const requireValidEmail = document.querySelector(".email-required")

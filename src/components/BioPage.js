@@ -11,8 +11,8 @@ export default function BioPage() {
     const [ animShow, setAnimShow ] = useState(false)
 
     useEffect(() => {
-        setTimeout(() => setAnimShow(!animShow), 100)
-    }, [])
+        return !animShow ? setTimeout(() => setAnimShow(!animShow), 100) : null
+    }, [animShow])
 
     return (
         <>
