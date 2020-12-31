@@ -8,12 +8,10 @@ import { Frame, Animation } from 'arwes';
 
 export default function MainContainer({ selectedPage }) {
 
-    const [ mainAnimShow, setMainAnimShow ] = useState(false)
+    const [ animShow, setAnimShow ] = useState(false)
     
     useEffect(() => {
-        setTimeout(() => {
-            setMainAnimShow(!mainAnimShow)
-        }, 50)
+        setTimeout(() => setAnimShow(!animShow), 50)
     }, [])
 
     const showPage = {
@@ -34,7 +32,7 @@ export default function MainContainer({ selectedPage }) {
         const style = {
             entering: {
                 width: "80vw",
-                opacity: '0.1'
+                opacity: '0'
             },
             entered: {
                 width: "80vw",
@@ -48,20 +46,18 @@ export default function MainContainer({ selectedPage }) {
     
     return (
         <div>
-            <Animation show={mainAnimShow} animate timeout={1000}>
+            <Animation show={animShow} animate timeout={1000}>
                 {anim => (
                     <Frame
                         className="main-frame"
-                        show={mainAnimShow}
+                        show={animShow}
                         animate
                         level={3}
                         corners={6}
                         layer='primary'
                     >
                         <div className="main-container" style={{...baseStyle, ...pageStyle(anim)}}>
-                            {/* <div className="info-and-image"> */}
-                                {showPage[selectedPage]}
-                            {/* </div> */}
+                            {showPage[selectedPage]}
                         </div>
                     </Frame>
                 )}

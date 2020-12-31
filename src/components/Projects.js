@@ -4,7 +4,7 @@ import ABCdl from './ABCdl';
 import EpicBeer from './EpicBeer';
 import Looksy from './Looksy';
 
-import { Words, Animation } from 'arwes';
+import { Words } from 'arwes';
 
 export default function Projects() {
 
@@ -12,9 +12,7 @@ export default function Projects() {
     const [ animShow, setAnimShow ] = useState(false)
 
     useEffect(() => {
-        setTimeout(() => {
-            setAnimShow(!animShow)
-        }, 100)
+        setTimeout(() => setAnimShow(!animShow), 100)
     }, [])
 
     const makeTargetProject = (event) => {
@@ -35,23 +33,19 @@ export default function Projects() {
     }
 
     return (
-        <Animation >
-            {anim => (
-                <>
-                    <div className="projects-nav">
-                        <div className="ABC project-tab" style={invertColor("ABC")}>
-                            <h5 className="ABC project-item" onClick={makeTargetProject}><Words animate>ABC Data Logger</Words></h5>
-                        </div>
-                        <div className="epic-beer project-tab" style={invertColor("epic-beer")}>
-                            <h5 className="epic-beer project-item" onClick={makeTargetProject}><Words animate>Epic Beer Run</Words></h5>
-                        </div>
-                        <div className="looksy project-tab" style={invertColor("looksy")}>
-                            <h5 className="looksy project-item" onClick={makeTargetProject}><Words animate>Looksy</Words></h5>
-                        </div>
-                    </div>
-                    {showProjects[selectedProject]}
-                </>
-            )}
-        </Animation>
+        <>
+            <div className="projects-nav">
+                <div className="ABC project-tab" style={invertColor("ABC")}>
+                    <h5 className="ABC project-item" onClick={makeTargetProject}><Words animate>ABC Data Logger</Words></h5>
+                </div>
+                <div className="epic-beer project-tab" style={invertColor("epic-beer")}>
+                    <h5 className="epic-beer project-item" onClick={makeTargetProject}><Words animate>Epic Beer Run</Words></h5>
+                </div>
+                <div className="looksy project-tab" style={invertColor("looksy")}>
+                    <h5 className="looksy project-item" onClick={makeTargetProject}><Words animate>Looksy</Words></h5>
+                </div>
+            </div>
+            {showProjects[selectedProject]}
+        </>
     )
 }

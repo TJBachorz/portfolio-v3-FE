@@ -9,9 +9,7 @@ export default function EpicBeer() {
     const [ animShow, setAnimShow ] = useState(false)
 
     useEffect(() => {
-        setTimeout(() => {
-            setAnimShow(!animShow)
-        }, 100)
+        setTimeout(() => setAnimShow(!animShow), 100)
     }, [])
 
     return (

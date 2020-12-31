@@ -10,7 +10,9 @@ import looksyGIF2 from '../assets/looksy-2.gif';
 export default function Looksy() {
 
     const [ animShow, setAnimShow ] = useState(false)
+
     let imgCount = 1
+    
     const looksyGIFS = [looksyGIF1, looksyGIF2]
 
     const cycleGIFS = () => {

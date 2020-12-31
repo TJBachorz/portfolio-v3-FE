@@ -7,9 +7,7 @@ export default function Navbar({ selectedPage, setSelectedPage }) {
     const [ navAnimShow, setNavAnimShow ] = useState(false)
 
     useEffect(() => {
-        setTimeout(() => {
-            setNavAnimShow(!navAnimShow)
-        }, 500)
+        setTimeout(() => setNavAnimShow(!navAnimShow), 500)
     }, [])
 
     const makeTargetPage = (event) => {

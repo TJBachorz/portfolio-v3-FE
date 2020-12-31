@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { bioPageSkills, renderTechImages } from './Utilities';
 
-import { Words, Frame, List } from 'arwes';
+import { Words, Frame } from 'arwes';
 
 import selfPortrait from '../assets/tj-cropped.jpg';
 
@@ -11,9 +11,7 @@ export default function BioPage() {
     const [ animShow, setAnimShow ] = useState(false)
 
     useEffect(() => {
-        setTimeout(() => {
-            setAnimShow(!animShow)
-        }, 100)
+        setTimeout(() => setAnimShow(!animShow), 100)
     }, [])
 
     return (
@@ -37,23 +35,23 @@ export default function BioPage() {
                     <div className="list-container">
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Former Professional Filmmaker and Brewer</Words>
+                            <Words className="list-item" show={animShow} animate>Former Professional Filmmaker and Brewer.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Excellent teamwork and communcation skills</Words>
+                            <Words className="list-item" show={animShow} animate>Excellent teamwork and communcation skills.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Seeks to create software that improves everything from workplace efficiency, to everyday lives</Words>
+                            <Words className="list-item" show={animShow} animate>Seeks to create software that improves everything from workplace efficiency, to everyday lives.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Considered dangerously dependable</Words>
+                            <Words className="list-item" show={animShow} animate>Considered dangerously dependable.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Subject should be approached with extreme enthusiasm</Words>
+                            <Words className="list-item" show={animShow} animate>Subject should be approached with extreme enthusiasm.</Words>
                         </div>
                     </div>   
                 </div>
