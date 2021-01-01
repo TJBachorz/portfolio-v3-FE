@@ -41,10 +41,6 @@ export default function Contact() {
         "content.0.value": invalidMessage,
     }
 
-    // const emailMeBaseStyle = {
-    //     transition: "transition: all 250ms ease-in-out"
-    // }
-
     const inputBaseStyle = {
         opacity: 0.1,
         backgroundColor: "#05181d",
@@ -131,7 +127,7 @@ export default function Contact() {
                                 <a className="download-resume" href={ resumePDF } download><Button show={animShow} animate>download_resume</Button></a>
                             </div>
                             <div className="email-me">
-                                <form id="email-form" onSubmit={sendEmail} className="contact-form">
+                                <form id="email-form" autocomplete="off" onSubmit={sendEmail} className="contact-form">
                                     <Words show={animShow} className="label" animate>
                                         email_subject:
                                     </Words>
