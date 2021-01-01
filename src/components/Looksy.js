@@ -48,7 +48,7 @@ export default function Looksy() {
                     <div className="project-list-container">
                         <div className="list-item-container">
                             <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" animate>Utilized Ruby on Rails back-end API to persist user and 3D modeling data using JWT auth.</Words>
+                            <Words className="list-item" animate>Utilized Ruby on Rails back-end API to persist user and 3D modelling data using JWT auth.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" animate>&gt;&gt;&nbsp;&nbsp;</Words>

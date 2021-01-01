@@ -50,7 +50,7 @@ export default function EpicBeer() {
                         layer='secondary'
                     >
                         <div className="fuzzy-background">
-                            <img className="primary-img" src="https://media.giphy.com/media/xdlQcTOqbTpq53xy8c/giphy.gif" alt="project gif"/>
+                            <img className="primary-img" src="https://media.giphy.com/media/xdlQcTOqbTpq53xy8c/giphy.gif" alt="epic-beer"/>
                         </div>
                     </Frame>
                 </div>

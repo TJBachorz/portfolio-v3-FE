@@ -39,7 +39,7 @@ export default function BioPage() {
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Excellent teamwork and communcation skills.</Words>
+                            <Words className="list-item" show={animShow} animate>Excellent teamwork and communication skills.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
