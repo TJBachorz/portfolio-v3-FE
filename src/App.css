@@ -17,8 +17,8 @@ main {
 }
 
 .Arwes-main-0-1-9 {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/08800aef-a1c3-4ac3-be7e-032bd085f169/d4f7xkv-6294abc9-f372-4550-9164-f198b6365ed0.png/v1/fill/w_1131,h_707,q_70,strp/blue_space_by_darkdissolution_d4f7xkv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMjAwIiwicGF0aCI6IlwvZlwvMDg4MDBhZWYtYTFjMy00YWMzLWJlN2UtMDMyYmQwODVmMTY5XC9kNGY3eGt2LTYyOTRhYmM5LWYzNzItNDU1MC05MTY0LWYxOThiNjM2NWVkMC5wbmciLCJ3aWR0aCI6Ijw9MTkyMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.Ss-6n9pb6rRxrF7U7_A5o-Zo826jnK_-PzQjLZB8D8c");
-  background-size: contain;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("./assets/space-background.jpg");
+  background-size: cover;
   background-attachment: fixed;
 }
 
@@ -410,7 +410,7 @@ a.link { color: #27dafd; }
 
 @media (min-width: 2560px) and (min-height: 1600px) {
   .header-text > span, h5 > span > span, h5.nav-item, .link { font-size: 42px;}
-  p.bio-data, .list-item { font-size: 38px; }
+  p.bio-data, .list-item { font-size: 34px; }
   p.answer { font-size: 42px; }
   h2 > span > span { font-size: 50px;}
   .project-links, .separator { font-size: 40px; }
@@ -427,8 +427,8 @@ a.link { color: #27dafd; }
     width: 680px;
   }
   img.tech-used {
-    height: 90px;
-    width: 90px;
+    height: 88px;
+    width: 88px;
   }
   .total-contact-container { margin-top: 60px; }
   .download-resume { margin-top: 35px; }
