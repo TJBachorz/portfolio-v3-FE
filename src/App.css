@@ -141,7 +141,7 @@ img.tech-used {
   animation: fade-in .75s linear 0s 1 forwards;
 }
 
-.link:hover {
+.link:hover, .nav-item:hover, .project-item:hover {
   background-color: #27dafd;
   color: #010506;
 }

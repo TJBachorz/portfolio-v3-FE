@@ -35,6 +35,7 @@ export default function Contact() {
 
     const invalidEmail = () => requireValidEmail.style.display = "inline-flex"
     const invalidMessage = () => requireMessage.style.display = "inline-flex"
+
     const errorHash = {
         "from": invalidEmail,
         "from.email": invalidEmail,
@@ -128,9 +129,7 @@ export default function Contact() {
                             </div>
                             <div className="email-me">
                                 <form id="email-form" autocomplete="off" onSubmit={sendEmail} className="contact-form">
-                                    <Words show={animShow} className="label" animate>
-                                        email_subject:
-                                    </Words>
+                                    <Words show={animShow} className="label" animate>email_subject:</Words>
                                     <input id="full-name" className="form-item" type="text" name="full_name" placeholder="user_full_name" 
                                         style={{...inputBaseStyle, ...inputStyle[anim.status]}}
                                         value={email.full_name} 
