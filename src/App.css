@@ -172,6 +172,8 @@ div.contact-info { width: 70%; }
 
 .project-links, .separator { font-size: 16px; }
 
+p.project-links > a > span > span:hover { color: #27dafd; }
+
 .separator { margin: 0px 8px 0px 8px; }
 
 img.primary-img, img.resume-image {
