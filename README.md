@@ -17,7 +17,6 @@ For this version of my personal site I took a lot of inspiration from sci-fi fil
   1.) Fork and clone this repository
   
   2.) In terminal run:
-  - `npm install arwes`
   - `npm install`
   - `npm start`
   
