@@ -1,8 +1,14 @@
-# [tjbachorz.live](https://tjbachorz.live)
-
 This is the version 3.0 of my portfolio site.
 
 <img src=portfolio.gif height="344" width="640"/>
+
+Frontend: [https://tjbachorz.live](https://tjbachorz.live)
+
+Backend: [https://github.com/TJBachorz/portfolio-v3-BE](https://github.com/TJBachorz/portfolio-v3-BE)
+
+## About 
+
+For this version of my personal site I took a lot of inspiration from sci-fi films and video games such as Demolition Man and Starcraft.  I hope you have as much fun navigating this futuristic terminal environment as I had creating it!
 
 ## Run Locally  
 
@@ -24,7 +30,7 @@ This is the version 3.0 of my portfolio site.
 
 ## Libraries
 
-[Arwes]("https://arwes.dev/")
+`arwes: "1.0.0-alpha.5"`
 
 ## Author
 
