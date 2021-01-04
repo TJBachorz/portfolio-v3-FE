@@ -293,7 +293,7 @@ a.link { color: #27dafd; }
   .bio-page-container, .total-project-container, .total-contact-container {
     margin-top: 75px;
   }
-  .techs { margin-top: 90px; }
+  .techs, .skills { margin-top: 35px; }
 }
 @media (max-width: 1024px) and (max-height: 1366px) {
   .bio-page-container, .total-project-container {
@@ -307,13 +307,13 @@ a.link { color: #27dafd; }
   }
   .download-resume { margin-bottom: 50px; }
   #submit { margin-bottom: 45px; }
-  .techs { margin-top: 90px; }
+  .techs { margin-top: 30px; }
 
 }
 
 @media (max-width: 1280px) and (max-height: 950px) {
   .techs {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }
 
@@ -381,8 +381,8 @@ a.link { color: #27dafd; }
   .total-contact-container { margin-top: 30px; }
   .bio-page-container { margin-top: 60px; }
   .total-project-container { margin-top: 30px;}
-  .techs { margin-top: 20px; }
-  .skills { margin-top: 10px; }
+  /* .techs { margin-top: 20px; }
+  .skills { margin-top: 10px; } */
 }
 
 @media (min-width: 1440px) and (min-height: 900px) {

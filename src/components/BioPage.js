@@ -39,19 +39,19 @@ export default function BioPage() {
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Excellent teamwork and communication skills.</Words>
+                            <Words className="list-item" show={animShow} animate>Aims to switch a career where the landscape is always evolving, and lifelong-learning is a must.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Seeks to create software that improves everything from workplace efficiency, to everyday lives.</Words>
+                            <Words className="list-item" show={animShow} animate>Loves clean code, automation, and navigating new frameworks.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Considered dangerously dependable.</Words>
+                            <Words className="list-item" show={animShow} animate>Brazilian jiu-jitsu practitioner.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Subject should be approached with extreme enthusiasm.</Words>
+                            <Words className="list-item" show={animShow} animate>Considered dangerously dependable and should be approached with extreme enthusiasm.</Words>
                         </div>
                     </div>   
                 </div>
