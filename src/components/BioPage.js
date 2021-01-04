@@ -39,7 +39,7 @@ export default function BioPage() {
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Aims to switch a career where the landscape is always evolving, and lifelong-learning is a must.</Words>
+                            <Words className="list-item" show={animShow} animate>Aims to transition to a career where the landscape is always evolving, and lifelong-learning is a must.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
