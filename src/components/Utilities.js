@@ -56,4 +56,15 @@ export const renderTechImages = (techHash) => {
 
 export const looksyBackupGIFS = ["https://j.gifs.com/ZYP52R.gif", "https://j.gifs.com/BNkzVN.gif"]
 
+export const onLoadEffects = (animShow, setAnimShow, typingAudio) => {
+    return !animShow ? 
+        setTimeout(() => {
+            setAnimShow(!animShow)
+            typingAudio.play()
+        }, 100) 
+        : null
+}
 
+export const playAudio = (audioFile, isMuted) => {
+    return isMuted ? audioFile.play() : null
+}

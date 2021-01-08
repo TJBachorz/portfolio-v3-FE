@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Words, Frame, Button, Animation } from 'arwes';
 
-import { mailerURL } from './Utilities';
+import { mailerURL, onLoadEffects } from './Utilities';
 
 import resumePDF from '../assets/TJ_Bachorz_Resume.pdf';
 import resumeImage from '../assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpeg';
@@ -13,21 +13,25 @@ import twitter from '../assets/twitter.png';
 
 import { isEmpty } from 'lodash';
 
-export default function Contact() {
 
+export default function Contact() {
+    
     const initialState = {
         full_name: "",
         from: "",
         subject: "",
         message: ""
     }
-
+    
     const [ animShow, setAnimShow ] = useState(false)
     const [ email, setEmail ] = useState({...initialState})
+    
+    const typingAudio = document.querySelector(".typing-audio")
+    const errorAudio = document.querySelector(".error-audio")
+    const deployAudio = document.querySelector(".deploy-audio")
 
-    useEffect(() => {
-        return !animShow ? setTimeout(() => setAnimShow(!animShow), 100) : null
-    }, [animShow])
+    useEffect(() => onLoadEffects(animShow, setAnimShow, typingAudio), [animShow, typingAudio])
+
         
     const successMessage = document.querySelector(".email-success")
     const requireValidEmail = document.querySelector(".email-required")
@@ -81,12 +85,21 @@ export default function Contact() {
         if (isEmpty(result)) {
             setEmail({...initialState})
             successMessage.style.display = "inline-flex"
+            deployAudio.play()
             resetResponseMessage()
         } else {
             successMessage.style.display = "none"
+            validateEmailAddress()
             const emailErrors = result.response.body.errors
             emailErrors.map(error => errorHash[error.field]())
+            errorAudio.play()
         }
+    }
+
+    const validateEmailAddress = () => {
+        return !email.from.includes("@") || email.from.length === 0 ?
+            errorHash["from"]()
+            : null
     }
 
     const resetResponseMessage = () => {
@@ -130,25 +143,25 @@ export default function Contact() {
                             <div className="email-me">
                                 <form id="email-form" autocomplete="off" onSubmit={sendEmail} className="contact-form">
                                     <Words show={animShow} className="label" animate>email_subject:</Words>
-                                    <input id="full-name" className="form-item" type="text" name="full_name" placeholder="user_full_name" 
+                                    <input id="full-name" className="form-item" type="text" name="full_name" placeholder="your_full_name" 
                                         style={{...inputBaseStyle, ...inputStyle[anim.status]}}
                                         value={email.full_name} 
                                         onChange={(event) => setEmail({...email, full_name: event.target.value})}
                                     />
                                     
-                                    <input id="user-email" className="form-item" type="text" name="from" placeholder="user_email" 
+                                    <input id="user-email" className="form-item" type="text" name="from" placeholder="your_email_address" 
                                         style={{...inputBaseStyle, ...inputStyle[anim.status]}}
                                         value={email.from} 
                                         onChange={(event) => setEmail({...email, from: event.target.value})}
                                     />
                                     <p className="email-required"><Words show={animShow} animate layer="alert">* valid_email_required</Words></p>
                                     
-                                    <input id="subject" className="form-item" type="text" name="subject" placeholder="message_subject" 
+                                    <input id="subject" className="form-item" type="text" name="subject" placeholder="subject" 
                                         style={{...inputBaseStyle, ...inputStyle[anim.status]}}
                                         value={email.subject} 
                                         onChange={(event) => setEmail({...email, subject: event.target.value})}
                                     />
-                                    <textarea id="message" className="form-item" rows="6" cols="40" name="message" placeholder="insert_message_here" 
+                                    <textarea id="message" className="form-item" rows="6" cols="40" name="message" placeholder="your_message" 
                                         style={{...inputBaseStyle, ...inputStyle[anim.status]}}
                                         value={email.message} 
                                         onChange={(event) => setEmail({...email, message: event.target.value})}
