@@ -15,8 +15,8 @@ export default function BioPage() {
     const isMuted = useAudio()
     
     useEffect(() => {
-        const typingAudio = document.querySelector(".typing-audio")
-        onLoadEffects(animShow, setAnimShow, typingAudio, isMuted, 100)
+        const deployAudio = document.querySelector(".deploy-audio")
+        onLoadEffects(animShow, setAnimShow, deployAudio, isMuted, 100)
     }, [animShow])
 
     return (

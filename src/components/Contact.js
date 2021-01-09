@@ -33,6 +33,7 @@ export default function Contact() {
     const clickAudio = document.querySelector(".click-audio")
     const errorAudio = document.querySelector(".error-audio")
     const deployAudio = document.querySelector(".deploy-audio")
+    const askAudio = document.querySelector(".ask-audio")
 
     useEffect(() => {
         onLoadEffects(animShow, setAnimShow, informationAudio, isMuted, 100)
@@ -91,14 +92,14 @@ export default function Contact() {
         if (isEmpty(result)) {
             setEmail({...initialState})
             successMessage.style.display = "inline-flex"
-            deployAudio.play()
+            playAudio(deployAudio, isMuted)
             resetResponseMessage()
         } else {
             successMessage.style.display = "none"
             validateEmailAddress()
             const emailErrors = result.response.body.errors
             emailErrors.map(error => errorHash[error.field]())
-            errorAudio.play()
+            playAudio(errorAudio, isMuted)
         }
     }
 
@@ -139,12 +140,17 @@ export default function Contact() {
                                     layer='secondary'
                                 >
                                     <div className="fuzzy-background">
-                                        <a href={ resumePDF } target="_blank" rel="noreferrer">
+                                        <a onClick={() => playAudio(askAudio, isMuted)} href={ resumePDF } target="_blank" rel="noreferrer">
                                             <img className="resume-image" src={resumeImage} alt="TJ Bachorz's Resume"/>
                                         </a>
                                     </div>
                                 </Frame>
-                                <a className="download-resume" href={ resumePDF } download><Button show={animShow} animate>download_resume</Button></a>
+                                <a 
+                                    onClick={() => playAudio(askAudio, isMuted)} 
+                                    className="download-resume" href={ resumePDF } 
+                                download >
+                                    <Button show={animShow} animate>download_resume</Button>
+                                </a>
                             </div>
                             <div className="email-me">
                                 <form id="email-form" autocomplete="off" onSubmit={sendEmail} className="contact-form">

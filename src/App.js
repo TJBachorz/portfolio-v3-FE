@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './App.css';
 
@@ -13,6 +13,7 @@ import errorMP3 from './assets/error.mp3';
 import deployMP3 from './assets/deploy.mp3';
 import informationMP3 from './assets/information.mp3';
 import clickMP3 from './assets/click.mp3';
+import askMP3 from './assets/ask.mp3';
 
 function App() {
 
@@ -34,8 +35,11 @@ function App() {
                 <audio className="information-audio">
                   <source src={informationMP3}></source>
                 </audio>
-                <audio className="click-audio">
+                <audio className="click-audio" >
                   <source src={clickMP3}></source>
+                </audio>
+                <audio className="ask-audio" >
+                  <source src={askMP3}></source>
                 </audio>
                 <AudioProvider>
                   <Header className="header" animate>

@@ -9,6 +9,7 @@ import { useAudio, useAudioUpdate } from './AudioContext';
 
 export default function SoundToggle() {
 
+    
     const isMuted = useAudio()
     const toggleMute = useAudioUpdate()
 

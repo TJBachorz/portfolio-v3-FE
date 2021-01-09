@@ -12,7 +12,7 @@ export const useAudioUpdate = () => {
 }
 
 export function AudioProvider({ children }) {
-    const [ isMuted, setIsMuted ] = useState(false)
+    const [ isMuted, setIsMuted ] = useState(true)
     
     const toggleMute = () => {
         setIsMuted(muteSetting => !muteSetting)

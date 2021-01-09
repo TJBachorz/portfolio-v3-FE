@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { epicBeerTech, renderTechImages, onLoadEffects } from './Utilities';
 
-import { useAudio, useAudioUpdate } from './AudioContext';
+import { useAudio } from './AudioContext';
 
 import { Words, Frame } from 'arwes';
 

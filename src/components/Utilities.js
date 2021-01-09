@@ -62,9 +62,9 @@ export const playAudio = (audioFile, isMuted) => {
 
 export const onLoadEffects = (animShow, setAnimShow, audioFile, isMuted, timeout) => {
     return !animShow ? 
-        setTimeout(() => {
-            setAnimShow(!animShow)
-            playAudio(audioFile, isMuted)
+    setTimeout(() => {
+        setAnimShow(!animShow)
+        playAudio(audioFile, isMuted)
         }, timeout) 
         : null
 }

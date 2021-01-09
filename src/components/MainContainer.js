@@ -17,8 +17,11 @@ export default function MainContainer({ selectedPage }) {
     const isMuted = useAudio()
 
     useEffect(() => {
-        const informationAudio = document.querySelector(".information-audio")
-        onLoadEffects(animShow, setAnimShow, informationAudio, isMuted, 150)
+        return !animShow ? 
+            setTimeout(() => {
+                setAnimShow(!animShow)
+            }, 100) 
+            : null
     }, [animShow])
 
     const showPage = {

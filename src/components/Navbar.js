@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { onLoadEffects, playAudio } from './Utilities';
+import { playAudio } from './Utilities';
 
 import { useAudio } from './AudioContext';
 
@@ -14,8 +14,7 @@ export default function Navbar({ selectedPage, setSelectedPage }) {
     const isMuted = useAudio()
     
     useEffect(() => {
-        const informationAudio = document.querySelector(".information-audio")
-        onLoadEffects(animShow, setAnimShow, informationAudio, isMuted, 100)
+        return !animShow ? setTimeout(() => setAnimShow(!animShow), 500) : null
     }, [animShow])
 
     const makeTargetPage = (event) => {
