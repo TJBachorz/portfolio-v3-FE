@@ -56,7 +56,7 @@ export const renderTechImages = (techHash) => {
 
 export const looksyBackupGIFS = ["https://j.gifs.com/ZYP52R.gif", "https://j.gifs.com/BNkzVN.gif"]
 
-const playAudio = (audioFile, isMuted) => {
+export const playAudio = (audioFile, isMuted) => {
     return !isMuted ? audioFile.play() : null
 }
 

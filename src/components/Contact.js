@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { Words, Frame, Button, Animation } from 'arwes';
 
-import { mailerURL, onLoadEffects } from './Utilities';
+import { mailerURL, onLoadEffects, playAudio } from './Utilities';
+
+import { useAudio } from './AudioContext';
 
 import resumePDF from '../assets/TJ_Bachorz_Resume.pdf';
 import resumeImage from '../assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpeg';
@@ -25,12 +27,16 @@ export default function Contact() {
     
     const [ animShow, setAnimShow ] = useState(false)
     const [ email, setEmail ] = useState({...initialState})
-    
-    const typingAudio = document.querySelector(".typing-audio")
+
+    const isMuted = useAudio()
+    const informationAudio = document.querySelector(".information-audio")
+    const clickAudio = document.querySelector(".click-audio")
     const errorAudio = document.querySelector(".error-audio")
     const deployAudio = document.querySelector(".deploy-audio")
 
-    useEffect(() => onLoadEffects(animShow, setAnimShow, typingAudio), [animShow, typingAudio])
+    useEffect(() => {
+        onLoadEffects(animShow, setAnimShow, informationAudio, isMuted, 100)
+    }, [animShow, informationAudio])
 
         
     const successMessage = document.querySelector(".email-success")
@@ -112,10 +118,10 @@ export default function Contact() {
             {anim => (
                 <>
                     <div className="contact-nav">
-                        <a className="link" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tjbachorz/"><h4><Words animate>Linkedin</Words></h4></a>
-                        <a className="link" target="_blank" rel="noreferrer" href="https://github.com/TJBachorz"><h4><Words animate>Github</Words></h4></a>
-                        <a className="link" target="_blank" rel="noreferrer" href="https://tjbachorz.medium.com/"><h4><Words animate>Medium</Words></h4></a>
-                        <a className="link" target="_blank" rel="noreferrer" href="https://twitter.com/ThomasBachorz"><h4><Words animate>Twitter</Words></h4></a>
+                        <a onClick={() => playAudio(clickAudio, isMuted)} className="link" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tjbachorz/"><h4><Words animate>Linkedin</Words></h4></a>
+                        <a onClick={() => playAudio(clickAudio, isMuted)} className="link" target="_blank" rel="noreferrer" href="https://github.com/TJBachorz"><h4><Words animate>Github</Words></h4></a>
+                        <a onClick={() => playAudio(clickAudio, isMuted)} className="link" target="_blank" rel="noreferrer" href="https://tjbachorz.medium.com/"><h4><Words animate>Medium</Words></h4></a>
+                        <a onClick={() => playAudio(clickAudio, isMuted)} className="link" target="_blank" rel="noreferrer" href="https://twitter.com/ThomasBachorz"><h4><Words animate>Twitter</Words></h4></a>
                         <a className="link-image" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tjbachorz/"><img className="soc-med-image" src={linkedin} alt="linked in"/></a>
                         <a className="link-image" target="_blank" rel="noreferrer" href="https://github.com/TJBachorz"><img className="soc-med-image" src={github} alt="github"/></a>
                         <a className="link-image" target="_blank" rel="noreferrer" href="https://tjbachorz.medium.com/"><img className="soc-med-image" src={medium} alt="medium"/></a>
