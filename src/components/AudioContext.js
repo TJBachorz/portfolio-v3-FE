@@ -1,10 +1,14 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'; 
 
 const AudioContext = React.createContext()
 const AudioUpdateContext = React.createContext()
 
 export const useAudio = () => {
     return useContext(AudioContext)
+}
+
+export const useAudioUpdate = () => {
+    return useContext(AudioUpdateContext)
 }
 
 export function AudioProvider({ children }) {
@@ -15,9 +19,9 @@ export function AudioProvider({ children }) {
     }
     return (
         <AudioContext.Provider value={isMuted}>
-            <AudioUpdateContext value={toggleMute}>
+            <AudioUpdateContext.Provider value={toggleMute}>
                 {children} 
-            </AudioUpdateContext>
+            </AudioUpdateContext.Provider>
         </AudioContext.Provider>
     )
 }

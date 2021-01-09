@@ -2,16 +2,21 @@ import React, { useState, useEffect } from 'react';
 
 import { ABCTech, renderTechImages, onLoadEffects } from './Utilities';
 
+import { useAudio } from './AudioContext';
+
 import { Words, Frame } from 'arwes';
 
 
 export default function ABCdl() {
     
     const [ animShow, setAnimShow ] = useState(false)
-    
+
+    const isMuted = useAudio()
     const typingAudio = document.querySelector(".typing-audio")
 
-    useEffect(() => onLoadEffects(animShow, setAnimShow, typingAudio), [animShow, typingAudio])
+    useEffect(() => {
+        onLoadEffects(animShow, setAnimShow, typingAudio, isMuted, 100)
+    }, [animShow, typingAudio])
 
     return (
         <>
