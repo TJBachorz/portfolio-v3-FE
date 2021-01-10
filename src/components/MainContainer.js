@@ -4,24 +4,14 @@ import BioPage from './BioPage';
 import Projects from './Projects';
 import Contact from './Contact';
 
-import { onLoadEffects } from './Utilities';
-
-import { useAudio } from './AudioContext';
-
 import { Frame, Animation } from 'arwes';
 
 export default function MainContainer({ selectedPage }) {
 
     const [ animShow, setAnimShow ] = useState(false)
 
-    const isMuted = useAudio()
-
     useEffect(() => {
-        return !animShow ? 
-            setTimeout(() => {
-                setAnimShow(!animShow)
-            }, 100) 
-            : null
+        return !animShow ? setTimeout(() => setAnimShow(!animShow), 100) : null
     }, [animShow])
 
     const showPage = {

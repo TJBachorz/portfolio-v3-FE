@@ -6,7 +6,6 @@ import { useAudio } from './AudioContext';
 
 import { Words, Frame } from 'arwes';
 
-
 export default function ABCdl() {
     
     const [ animShow, setAnimShow ] = useState(false)
@@ -16,7 +15,7 @@ export default function ABCdl() {
 
     useEffect(() => {
         onLoadEffects(animShow, setAnimShow, typingAudio, isMuted, 100)
-    }, [animShow, typingAudio])
+    }, [animShow, typingAudio, isMuted])
 
     return (
         <>

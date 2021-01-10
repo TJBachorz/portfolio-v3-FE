@@ -16,7 +16,7 @@ export default function EpicBeer() {
 
     useEffect(() => {
         onLoadEffects(animShow, setAnimShow, typingAudio, isMuted, 100)
-    }, [animShow, typingAudio])
+    }, [animShow, typingAudio, isMuted])
 
     return (
         <>

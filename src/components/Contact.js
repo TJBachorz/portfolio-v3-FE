@@ -37,7 +37,7 @@ export default function Contact() {
 
     useEffect(() => {
         onLoadEffects(animShow, setAnimShow, informationAudio, isMuted, 100)
-    }, [animShow, informationAudio])
+    }, [animShow, informationAudio, isMuted])
 
         
     const successMessage = document.querySelector(".email-success")

@@ -29,7 +29,7 @@ export default function Looksy() {
         const looksyGIFIntervalID = setInterval(cycleGIFS, 9000)
         onLoadEffects(animShow, setAnimShow, typingAudio, isMuted, 100)
         return () => clearInterval(looksyGIFIntervalID)
-    }, [animShow, typingAudio])
+    }, [animShow, typingAudio, isMuted])
     
 
 

@@ -17,7 +17,7 @@ export default function BioPage() {
     useEffect(() => {
         const deployAudio = document.querySelector(".deploy-audio")
         onLoadEffects(animShow, setAnimShow, deployAudio, isMuted, 100)
-    }, [animShow])
+    }, [animShow, isMuted])
 
     return (
         <>
