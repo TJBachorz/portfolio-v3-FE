@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
-import { epicBeerTech, renderTechImages } from './Utilities';
+import { epicBeerTech, renderTechImages, onLoadEffects } from './Utilities';
+
+import { useAudio } from './AudioContext';
 
 import { Words, Frame } from 'arwes';
 
 export default function EpicBeer() {
 
+    const isMuted = useAudio()
+    
     const [ animShow, setAnimShow ] = useState(false)
+    
+    const typingAudio = document.querySelector(".typing-audio")
 
     useEffect(() => {
-        return !animShow ? setTimeout(() => setAnimShow(!animShow), 100) : null
-    }, [animShow])
+        onLoadEffects(animShow, setAnimShow, typingAudio, isMuted, 100)
+    }, [animShow, typingAudio, isMuted])
 
     return (
         <>

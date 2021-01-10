@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
+import { playAudio } from './Utilities';
+
+import { useAudio } from './AudioContext';
+
 import { Animation, Frame } from 'arwes';
 
 export default function Navbar({ selectedPage, setSelectedPage }) {
 
     const [ animShow, setAnimShow ] = useState(false)
 
+    const clickAudio = document.querySelector(".click-audio")
+    const isMuted = useAudio()
+    
     useEffect(() => {
         return !animShow ? setTimeout(() => setAnimShow(!animShow), 500) : null
     }, [animShow])
 
     const makeTargetPage = (event) => {
         const page = event.currentTarget.className.split(" ")[0];
+        playAudio(clickAudio, isMuted)
         setSelectedPage(page)
     }
     

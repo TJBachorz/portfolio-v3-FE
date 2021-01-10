@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { Words, Frame, Button, Animation } from 'arwes';
 
-import { mailerURL } from './Utilities';
+import { mailerURL, onLoadEffects, playAudio } from './Utilities';
+
+import { useAudio } from './AudioContext';
 
 import resumePDF from '../assets/TJ_Bachorz_Resume.pdf';
 import resumeImage from '../assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpeg';
@@ -13,21 +15,30 @@ import twitter from '../assets/twitter.png';
 
 import { isEmpty } from 'lodash';
 
-export default function Contact() {
 
+export default function Contact() {
+    
     const initialState = {
         full_name: "",
         from: "",
         subject: "",
         message: ""
     }
-
+    
     const [ animShow, setAnimShow ] = useState(false)
     const [ email, setEmail ] = useState({...initialState})
 
+    const isMuted = useAudio()
+    const informationAudio = document.querySelector(".information-audio")
+    const clickAudio = document.querySelector(".click-audio")
+    const errorAudio = document.querySelector(".error-audio")
+    const deployAudio = document.querySelector(".deploy-audio")
+    const askAudio = document.querySelector(".ask-audio")
+
     useEffect(() => {
-        return !animShow ? setTimeout(() => setAnimShow(!animShow), 100) : null
-    }, [animShow])
+        onLoadEffects(animShow, setAnimShow, informationAudio, isMuted, 100)
+    }, [animShow, informationAudio, isMuted])
+
         
     const successMessage = document.querySelector(".email-success")
     const requireValidEmail = document.querySelector(".email-required")
@@ -81,12 +92,21 @@ export default function Contact() {
         if (isEmpty(result)) {
             setEmail({...initialState})
             successMessage.style.display = "inline-flex"
+            playAudio(deployAudio, isMuted)
             resetResponseMessage()
         } else {
             successMessage.style.display = "none"
+            validateEmailAddress()
             const emailErrors = result.response.body.errors
             emailErrors.map(error => errorHash[error.field]())
+            playAudio(errorAudio, isMuted)
         }
+    }
+
+    const validateEmailAddress = () => {
+        return !email.from.includes("@") || email.from.length === 0 ?
+            errorHash["from"]()
+            : null
     }
 
     const resetResponseMessage = () => {
@@ -99,10 +119,10 @@ export default function Contact() {
             {anim => (
                 <>
                     <div className="contact-nav">
-                        <a className="link" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tjbachorz/"><h4><Words animate>Linkedin</Words></h4></a>
-                        <a className="link" target="_blank" rel="noreferrer" href="https://github.com/TJBachorz"><h4><Words animate>Github</Words></h4></a>
-                        <a className="link" target="_blank" rel="noreferrer" href="https://tjbachorz.medium.com/"><h4><Words animate>Medium</Words></h4></a>
-                        <a className="link" target="_blank" rel="noreferrer" href="https://twitter.com/ThomasBachorz"><h4><Words animate>Twitter</Words></h4></a>
+                        <a onClick={() => playAudio(clickAudio, isMuted)} className="link" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tjbachorz/"><h4><Words animate>Linkedin</Words></h4></a>
+                        <a onClick={() => playAudio(clickAudio, isMuted)} className="link" target="_blank" rel="noreferrer" href="https://github.com/TJBachorz"><h4><Words animate>Github</Words></h4></a>
+                        <a onClick={() => playAudio(clickAudio, isMuted)} className="link" target="_blank" rel="noreferrer" href="https://tjbachorz.medium.com/"><h4><Words animate>Medium</Words></h4></a>
+                        <a onClick={() => playAudio(clickAudio, isMuted)} className="link" target="_blank" rel="noreferrer" href="https://twitter.com/ThomasBachorz"><h4><Words animate>Twitter</Words></h4></a>
                         <a className="link-image" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tjbachorz/"><img className="soc-med-image" src={linkedin} alt="linked in"/></a>
                         <a className="link-image" target="_blank" rel="noreferrer" href="https://github.com/TJBachorz"><img className="soc-med-image" src={github} alt="github"/></a>
                         <a className="link-image" target="_blank" rel="noreferrer" href="https://tjbachorz.medium.com/"><img className="soc-med-image" src={medium} alt="medium"/></a>
@@ -120,35 +140,40 @@ export default function Contact() {
                                     layer='secondary'
                                 >
                                     <div className="fuzzy-background">
-                                        <a href={ resumePDF } target="_blank" rel="noreferrer">
+                                        <a onClick={() => playAudio(askAudio, isMuted)} href={ resumePDF } target="_blank" rel="noreferrer">
                                             <img className="resume-image" src={resumeImage} alt="TJ Bachorz's Resume"/>
                                         </a>
                                     </div>
                                 </Frame>
-                                <a className="download-resume" href={ resumePDF } download><Button show={animShow} animate>download_resume</Button></a>
+                                <a 
+                                    onClick={() => playAudio(askAudio, isMuted)} 
+                                    className="download-resume" href={ resumePDF } 
+                                download >
+                                    <Button show={animShow} animate>download_resume</Button>
+                                </a>
                             </div>
                             <div className="email-me">
                                 <form id="email-form" autocomplete="off" onSubmit={sendEmail} className="contact-form">
                                     <Words show={animShow} className="label" animate>email_subject:</Words>
-                                    <input id="full-name" className="form-item" type="text" name="full_name" placeholder="user_full_name" 
+                                    <input id="full-name" className="form-item" type="text" name="full_name" placeholder="your_full_name" 
                                         style={{...inputBaseStyle, ...inputStyle[anim.status]}}
                                         value={email.full_name} 
                                         onChange={(event) => setEmail({...email, full_name: event.target.value})}
                                     />
                                     
-                                    <input id="user-email" className="form-item" type="text" name="from" placeholder="user_email" 
+                                    <input id="user-email" className="form-item" type="text" name="from" placeholder="your_email_address" 
                                         style={{...inputBaseStyle, ...inputStyle[anim.status]}}
                                         value={email.from} 
                                         onChange={(event) => setEmail({...email, from: event.target.value})}
                                     />
                                     <p className="email-required"><Words show={animShow} animate layer="alert">* valid_email_required</Words></p>
                                     
-                                    <input id="subject" className="form-item" type="text" name="subject" placeholder="message_subject" 
+                                    <input id="subject" className="form-item" type="text" name="subject" placeholder="subject" 
                                         style={{...inputBaseStyle, ...inputStyle[anim.status]}}
                                         value={email.subject} 
                                         onChange={(event) => setEmail({...email, subject: event.target.value})}
                                     />
-                                    <textarea id="message" className="form-item" rows="6" cols="40" name="message" placeholder="insert_message_here" 
+                                    <textarea id="message" className="form-item" rows="6" cols="40" name="message" placeholder="your_message" 
                                         style={{...inputBaseStyle, ...inputStyle[anim.status]}}
                                         value={email.message} 
                                         onChange={(event) => setEmail({...email, message: event.target.value})}

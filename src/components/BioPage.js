@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
-import { bioPageSkills, renderTechImages } from './Utilities';
+import { bioPageSkills, renderTechImages, onLoadEffects } from './Utilities';
 
 import { Words, Frame } from 'arwes';
 
 import selfPortrait from '../assets/tj-cropped.jpg';
 
+import { useAudio } from './AudioContext';
+
 export default function BioPage() {
-
+    
     const [ animShow, setAnimShow ] = useState(false)
-
+    
+    const isMuted = useAudio()
+    
     useEffect(() => {
-        return !animShow ? setTimeout(() => setAnimShow(!animShow), 100) : null
-    }, [animShow])
+        const deployAudio = document.querySelector(".deploy-audio")
+        onLoadEffects(animShow, setAnimShow, deployAudio, isMuted, 100)
+    }, [animShow, isMuted])
 
     return (
         <>

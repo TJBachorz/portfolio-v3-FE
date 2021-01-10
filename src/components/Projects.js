@@ -4,6 +4,10 @@ import ABCdl from './ABCdl';
 import EpicBeer from './EpicBeer';
 import Looksy from './Looksy';
 
+import { playAudio } from './Utilities';
+
+import { useAudio } from './AudioContext';
+
 import { Words } from 'arwes';
 
 export default function Projects() {
@@ -11,12 +15,16 @@ export default function Projects() {
     const [selectedProject, setSelectedProject] = useState("ABC")
     const [ animShow, setAnimShow ] = useState(false)
 
+    const clickAudio = document.querySelector(".click-audio")
+    const isMuted = useAudio()
+
     useEffect(() => {
         return !animShow ? setTimeout(() => setAnimShow(!animShow), 100) : null
     }, [animShow])
 
     const makeTargetProject = (event) => {
         const project = event.currentTarget.className.split(" ")[0];
+        playAudio(clickAudio, isMuted)
         setSelectedProject(project)
     }
 

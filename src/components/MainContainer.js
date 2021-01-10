@@ -9,9 +9,9 @@ import { Frame, Animation } from 'arwes';
 export default function MainContainer({ selectedPage }) {
 
     const [ animShow, setAnimShow ] = useState(false)
-    
+
     useEffect(() => {
-        return !animShow ? setTimeout(() => setAnimShow(!animShow), 50) : null
+        return !animShow ? setTimeout(() => setAnimShow(!animShow), 100) : null
     }, [animShow])
 
     const showPage = {

@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
-import { looksyTech, renderTechImages } from './Utilities';
+import { looksyTech, renderTechImages, onLoadEffects } from './Utilities';
+
+import { useAudio } from './AudioContext';
 
 import { Words, Frame } from 'arwes';
 
 import looksyGIF1 from '../assets/looksy-1.gif';
 import looksyGIF2 from '../assets/looksy-2.gif';
 
+
 export default function Looksy() {
-
-    const [ animShow, setAnimShow ] = useState(false)
-
-    let imgCount = 1
     
+    const [ animShow, setAnimShow ] = useState(false)
+    
+    let imgCount = 1
+    const typingAudio = document.querySelector(".typing-audio")
     const looksyGIFS = [looksyGIF1, looksyGIF2]
+    const isMuted = useAudio()
 
     const cycleGIFS = () => {
         const gifImage = document.querySelector(".primary-img")
@@ -23,13 +27,11 @@ export default function Looksy() {
 
     useEffect(() => {
         const looksyGIFIntervalID = setInterval(cycleGIFS, 9000)
-        setTimeout(() => {
-            if (animShow === false) {
-                setAnimShow(!animShow)
-            }
-        }, 100)
+        onLoadEffects(animShow, setAnimShow, typingAudio, isMuted, 100)
         return () => clearInterval(looksyGIFIntervalID)
-    })
+    }, [animShow, typingAudio, isMuted])
+    
+
 
     return (
         <>

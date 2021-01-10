@@ -6,11 +6,11 @@ html, body { background-color:#000204; }
 
 .main-frame { margin-bottom: 20px; }
 
-.c019 {
+/* .c018 {
   background-image: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url("./assets/space-background.jpg");
   background-size: cover;
   background-attachment: fixed;
-}
+} */
 
 main {
   width: 100%;
@@ -31,6 +31,26 @@ main {
 h1 {
   display: block;
   text-align: left;
+}
+
+.c016 {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ), url("./assets/space-background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  z-index: 1;
+  transition: all 250ms ease-in;
+}
+
+.c017 {
+  background-image: url("./assets/glow.png");
+  position: absolute;
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  background-position: center top;
+  background-attachment: fixed;
+  z-index: 2;
+  transition: all 250ms ease-in;
 }
 
 p { margin: 1px; }
@@ -285,6 +305,20 @@ a.link { color: #27dafd; }
 .message-required, .email-required {
   align-self: start;
   font-size: 12px;
+}
+
+.mute {
+  position: absolute;
+  font-size: 9px;
+  top: 3%;
+  left:90%;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.speaker {
+  height: 10px;
+  width: 10px;
 }
 
 /* tablet responsiveness */
