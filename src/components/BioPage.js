@@ -40,11 +40,7 @@ export default function BioPage() {
                     <div className="list-container">
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Former Professional Filmmaker and Brewer.</Words>
-                        </div>
-                        <div className="list-item-container">
-                            <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
-                            <Words className="list-item" show={animShow} animate>Aims to transition to a career where the landscape is always evolving, and lifelong-learning is a must.</Words>
+                            <Words className="list-item" show={animShow} animate>Believes positivity and communication lead to the best outcomes.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
@@ -53,6 +49,10 @@ export default function BioPage() {
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
                             <Words className="list-item" show={animShow} animate>Brazilian jiu-jitsu practitioner.</Words>
+                        </div>
+                        <div className="list-item-container">
+                            <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
+                            <Words className="list-item" show={animShow} animate>Former Professional Filmmaker and Brewer.</Words>
                         </div>
                         <div className="list-item-container">
                             <Words className="list-item" show={animShow} animate>&gt;&gt;&nbsp;&nbsp;</Words>
