@@ -1,9 +1,10 @@
 import ARCube from '../assets/AR-cube.jpg';
+import reactLogo from '../assets/react.png';
 
 export const bioPageSkills = {
     Javascript: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
     Node: "https://logodix.com/logo/1764882.png",
-    React: "https://cdn.worldvectorlogo.com/logos/react.svg",
+    React: reactLogo,
     ReactNavigation: "https://reactnavigation.org/img/spiro.svg",
     Vue: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1024px-Vue.js_Logo_2.svg.png",
     Ruby: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/396px-Ruby_logo.svg.png",
@@ -19,7 +20,7 @@ export const bioPageSkills = {
 }
 export const ABCTech = {
     Javascript: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
-    React: "https://cdn.worldvectorlogo.com/logos/react.svg",
+    React: reactLogo,
     ReactNavigation: "https://reactnavigation.org/img/spiro.svg",
     Python: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/220px-Python-logo-notext.svg.png",
     Django: "https://img.stackshare.io/service/994/4aGjtNQv.png",
@@ -27,7 +28,7 @@ export const ABCTech = {
 }
 export const epicBeerTech = {
     Javascript: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
-    React: "https://cdn.worldvectorlogo.com/logos/react.svg",
+    React: reactLogo,
     Ruby: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/396px-Ruby_logo.svg.png",
     Rails: "https://pbs.twimg.com/media/CZGHPChUAAA3jqE.png",
     Postgres: "https://assets.ctfassets.net/k49d63tr8kcn/2PSwdyLfIIMqQomsok2Ea8/c8a3f648e592990e4bedfc4a0acbb312/icon-postgres.svg",
@@ -44,7 +45,7 @@ export const looksyTech = {
     AR: ARCube
 }
 
-export const mailerURL = "https://personal-site-sendgrid-mailer.herokuapp.com"
+export const mailerURL = "https://personal-site-sendgrid-mailer.herokuapp.com";
 
 export const renderTechImages = (techHash) => {
     const techEntries = Object.entries(techHash)
