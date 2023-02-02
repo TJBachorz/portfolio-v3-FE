@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Words } from 'arwes';
+
 import soundOff from '../assets/soundOff.png';
 import soundOn from '../assets/soundOn.png';
 
@@ -15,7 +17,7 @@ export default function SoundToggle() {
 
     return (
         <div className="mute" onClick={toggleMute}>
-            <img className="speaker" src={icon()} alt="speaker-icon"/>
+            <Words><img className="speaker" src={icon()} alt="speaker-icon"/></Words>
         </div>
     )
 }
