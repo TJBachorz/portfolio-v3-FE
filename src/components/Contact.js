@@ -7,7 +7,7 @@ import { mailerURL, onLoadEffects, playAudio } from './Utilities';
 import { useAudio } from './AudioContext';
 
 import resumePDF from '../assets/TJ_Bachorz_Resume.pdf';
-import resumeImage from '../assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpeg';
+import resumeImage from '../assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpg';
 import linkedin from '../assets/linkedin.png';
 import github from '../assets/github.png';
 import medium from '../assets/medium.png';
