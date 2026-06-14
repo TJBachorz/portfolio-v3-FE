@@ -1,0 +1,106 @@
+.section {
+  padding: 3rem 2rem;
+}
+
+.hero {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.nameAccent {
+  display: block;
+  background: linear-gradient(135deg, var(--cyan), rgba(0, 200, 255, 0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.title {
+  font-size: 1rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: rgba(240, 244, 248, 0.7);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  padding: 0.7rem 1.6rem;
+  background: var(--cyan-ghost);
+  border: 1px solid var(--cyan);
+  border-radius: 4px;
+  color: var(--cyan);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btnPrimary:hover {
+  background: rgba(0, 200, 255, 0.18);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
+}
+
+.btnSecondary {
+  padding: 0.7rem 1.6rem;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btnSecondary:hover {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.scrollHint {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan-dim), transparent);
+}

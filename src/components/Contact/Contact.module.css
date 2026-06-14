@@ -1,0 +1,128 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.intro {
+  font-size: 1rem;
+  color: rgba(240, 244, 248, 0.7);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+}
+
+.socialLink {
+  display: block;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: color 0.2s;
+}
+
+.socialLink:hover {
+  color: var(--cyan);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--cyan-dim);
+  text-transform: uppercase;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: rgba(0, 200, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: rgba(0, 200, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 200, 255, 0.06);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit {
+  width: 100%;
+  padding: 0.7rem 1.6rem;
+  background: var(--cyan-ghost);
+  border: 1px solid var(--cyan);
+  border-radius: 4px;
+  color: var(--cyan);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.submit:hover:not(:disabled) {
+  background: rgba(0, 200, 255, 0.18);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
+}
+
+.submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.successMsg {
+  color: #4ade80;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  border-radius: 4px;
+}
+
+.errorMsg {
+  color: #f87171;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
