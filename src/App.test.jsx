@@ -8,11 +8,6 @@ vi.mock('framer-motion', () => ({
   },
 }))
 
-vi.mock('./hooks/useSound', () => ({
-  useSound: () => ({ play: vi.fn(), muted: true, toggle: vi.fn() }),
-}))
-
-vi.mock('./assets/click.mp3', () => ({ default: '/click.mp3' }))
 vi.mock('./assets/tj-cropped.jpg', () => ({ default: '/tj-cropped.jpg' }))
 
 // Nav
@@ -26,11 +21,6 @@ test('nav links point to correct section anchors', () => {
   expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('href', '#about')
   expect(screen.getByRole('link', { name: 'Work' })).toHaveAttribute('href', '#work')
   expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '#contact')
-})
-
-test('nav has sound toggle button', () => {
-  render(<App />)
-  expect(screen.getByRole('button', { name: /mute|unmute/i })).toBeInTheDocument()
 })
 
 // Hero
