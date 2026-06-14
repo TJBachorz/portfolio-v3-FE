@@ -10,7 +10,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <p className="section-label">hello world</p>
+        <p className="section-label">hello, I'm TJ</p>
         <h1 className={styles.name}>
           Thomas <span className={styles.nameAccent}>Bachorz</span>
         </h1>
