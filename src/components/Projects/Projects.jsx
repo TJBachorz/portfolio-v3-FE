@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import ProjectCard from './ProjectCard'
 import styles from './Projects.module.css'
-import looksyImg from '../../assets/looksy-1.gif'
+import looksyImg from '../../assets/looksy-2.gif'
 
 const PROJECTS = [
   {
@@ -23,6 +23,7 @@ const PROJECTS = [
     name: 'Epic Beer Run',
     featured: false,
     image: 'https://media.giphy.com/media/xdlQcTOqbTpq53xy8c/giphy.gif',
+    imageAspect: 'portrait',
     description:
       'A road trip planner for craft beer lovers. Map out your next brewery vacation with a TOPOJSON-rendered interactive map, drag-and-drop route building, and live BreweryDB API data — all powered by React and Ruby on Rails.',
     tags: ['React', 'Ruby on Rails', 'TOPOJSON', 'PostgreSQL'],
