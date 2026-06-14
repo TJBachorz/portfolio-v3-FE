@@ -1,7 +1,12 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { createPortal } from 'react-dom'
+import { motion, AnimatePresence } from 'framer-motion'
+import Lightbox from '../Lightbox/Lightbox'
 import styles from './Projects.module.css'
 
-export default function ProjectCard({ name, description, tags, links, featured = false, image = null }) {
+export default function ProjectCard({ name, description, tags, links, featured = false, image = null, imageAspect = 'landscape' }) {
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+
   return (
     <motion.div
       className={`${styles.card} ${featured ? styles.featured : ''}`}
@@ -9,10 +14,32 @@ export default function ProjectCard({ name, description, tags, links, featured =
       transition={{ duration: 0.2 }}
     >
       {image && (
-        <div className={styles.cardImage}>
-          <img src={image} alt={`${name} preview`} className={styles.cardImg} />
-          <div className={styles.cardImageOverlay} />
-        </div>
+        <>
+          <div
+            className={`${styles.cardImage} ${imageAspect === 'portrait' ? styles.cardImagePortrait : ''}`}
+            onClick={() => setLightboxOpen(true)}
+            style={{ cursor: 'zoom-in' }}
+          >
+            <img
+              src={image}
+              alt={`${name} preview`}
+              className={`${styles.cardImg} ${imageAspect === 'portrait' ? styles.cardImgPortrait : styles.cardImgLandscape}`}
+            />
+            <div className={styles.cardImageOverlay} />
+          </div>
+          {createPortal(
+            <AnimatePresence>
+              {lightboxOpen && (
+                <Lightbox
+                  src={image}
+                  alt={`${name} preview`}
+                  onClose={() => setLightboxOpen(false)}
+                />
+              )}
+            </AnimatePresence>,
+            document.body
+          )}
+        </>
       )}
       {featured && <span className={styles.badge}>Featured</span>}
       <h3 className={styles.cardName}>{name}</h3>
