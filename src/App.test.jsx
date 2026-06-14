@@ -43,11 +43,12 @@ test('about section has headshot image', () => {
 })
 
 // Projects
-test('all three projects are present', () => {
+test('all four projects are present', () => {
   render(<App />)
   expect(screen.getByText('Looksy')).toBeInTheDocument()
   expect(screen.getByText('Epic Beer Run')).toBeInTheDocument()
   expect(screen.getByText('ABC Data Logger')).toBeInTheDocument()
+  expect(screen.getByText('Outdoor.sy')).toBeInTheDocument()
 })
 
 test('project links open in new tab', () => {

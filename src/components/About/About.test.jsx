@@ -8,7 +8,7 @@ vi.mock('framer-motion', () => ({
 
 test('renders bio section', () => {
   render(<About />)
-  expect(screen.getByText(/full-stack developer/i)).toBeInTheDocument()
+  expect(screen.getByText(/full-stack software engineer/i)).toBeInTheDocument()
 })
 
 test('renders headshot image with alt text', () => {
@@ -26,5 +26,5 @@ test('renders all skill tags', () => {
 
 test('renders section-label with about text', () => {
   render(<About />)
-  expect(screen.getByText(/about/i)).toBeInTheDocument()
+  expect(screen.getByText(/about/i, { selector: '.section-label' })).toBeInTheDocument()
 })

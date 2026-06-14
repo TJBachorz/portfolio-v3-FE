@@ -7,8 +7,8 @@ const PROJECTS = [
     name: 'Looksy',
     featured: true,
     description:
-      'A 3D augmented reality profile picture viewer. Users upload photos which are processed and rendered as AR models viewable through any mobile browser — no app install required. Built across three services coordinated via JWT auth.',
-    tags: ['AR', 'Node.js', 'Ruby on Rails', 'AWS S3', 'Google model-viewer', 'PostgreSQL'],
+      'An augmented reality home-decorating app. Upload any image and it\'s processed into an interactive 3D model viewable in any mobile browser via Google\'s model-viewer — no app install required. Uses a dual-backend architecture: a Rails API for JWT-authenticated user data and a Node/Express service with AWS S3 for image upload and URL management.',
+    tags: ['React', 'Ruby on Rails', 'Node.js', 'AWS S3', 'Google model-viewer', 'PostgreSQL'],
     links: [
       { label: 'Demo ↗', href: 'YOUR_YOUTUBE_URL' },
       { label: 'Frontend', href: 'YOUR_LOOKSY_FRONTEND_GITHUB_URL' },
@@ -20,7 +20,7 @@ const PROJECTS = [
     name: 'Epic Beer Run',
     featured: false,
     description:
-      'An interactive US brewery map. Drag breweries onto a personal list, filter by state, and explore via a TOPOJSON-rendered SVG map. Integrates the BreweryDB API with a Rails backend.',
+      'A road trip planner for craft beer lovers. Map out your next brewery vacation with a TOPOJSON-rendered interactive map, drag-and-drop route building, and live BreweryDB API data — all powered by React and Ruby on Rails.',
     tags: ['React', 'Ruby on Rails', 'TOPOJSON', 'PostgreSQL'],
     links: [
       { label: 'Live Demo ↗', href: 'YOUR_BEER_RUN_DEMO_URL' },
@@ -32,12 +32,23 @@ const PROJECTS = [
     name: 'ABC Data Logger',
     featured: false,
     description:
-      'A mobile app for behavioral data collection. Records antecedent-behavior-consequence chains for therapists and researchers, with a Django REST API backend.',
-    tags: ['React Native', 'Python', 'Django', 'PostgreSQL'],
+      'A mobile app for behavioral therapists. Records antecedent-behavior-consequence chains with JWT authentication and client data graphing. Built with React Native and TypeScript on the frontend, backed by a RESTful Python/Django API.',
+    tags: ['React Native', 'TypeScript', 'Python', 'Django', 'PostgreSQL'],
     links: [
       { label: 'Demo ↗', href: 'YOUR_ABC_LOOM_URL' },
       { label: 'Frontend', href: 'YOUR_ABC_FRONTEND_GITHUB_URL' },
       { label: 'Backend', href: 'YOUR_ABC_BACKEND_GITHUB_URL' },
+    ],
+  },
+  {
+    name: 'Outdoor.sy',
+    featured: false,
+    description:
+      'A full-stack customer intake system with a custom file parser that ingests raw .txt files into a structured PostgreSQL database via validated CRUD endpoints. Features a dynamic, sortable table UI for browsing records by name or vehicle type, with backend validations enforcing data integrity.',
+    tags: ['React', 'Ruby on Rails', 'PostgreSQL'],
+    links: [
+      { label: 'Frontend', href: 'YOUR_OUTDOORSY_FRONTEND_GITHUB_URL' },
+      { label: 'Backend', href: 'YOUR_OUTDOORSY_BACKEND_GITHUB_URL' },
     ],
   },
 ]

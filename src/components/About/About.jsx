@@ -3,9 +3,10 @@ import headshot from '../../assets/tj-cropped.jpg'
 import styles from './About.module.css'
 
 const SKILLS = [
-  'JavaScript', 'React', 'React Native', 'Node.js',
+  'TypeScript', 'JavaScript', 'React', 'React Native',
   'Python', 'Django', 'Java', 'Spring Boot',
-  'PostgreSQL', 'AWS', 'Firebase', 'HTML · CSS',
+  'Ruby', 'Rails', 'Node.js', 'Vue.js',
+  'PostgreSQL', 'GraphQL', 'AWS', 'HTML · CSS',
 ]
 
 export default function About() {
@@ -22,11 +23,11 @@ export default function About() {
           <div>
             <p className={styles.bio}>
               I'm <strong>Thomas Bachorz</strong> — though everyone calls me TJ.
-              I'm a full-stack developer based in Denver, CO, and I enjoy building
-              software that feels good to use — paying equal attention to clean
-              architecture and polished interfaces. I've shipped React and React
-              Native apps, Python/Django APIs, Spring Boot services, and everything
-              in between.
+              I'm a full-stack software engineer with 5+ years of production
+              experience, based in Denver, CO. I'm passionate about leveraging AI
+              tooling to multiply productivity and build smarter systems, and I
+              take pride in end-to-end ownership — from technical design through
+              production deployment.
             </p>
             <p className={styles.skillsLabel}>Technologies</p>
             <div className={styles.skills}>

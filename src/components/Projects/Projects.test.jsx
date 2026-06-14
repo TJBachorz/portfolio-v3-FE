@@ -8,11 +8,12 @@ vi.mock('framer-motion', () => ({
   },
 }))
 
-test('renders all three project names', () => {
+test('renders all four project names', () => {
   render(<Projects />)
   expect(screen.getByText('Looksy')).toBeInTheDocument()
   expect(screen.getByText('Epic Beer Run')).toBeInTheDocument()
   expect(screen.getByText('ABC Data Logger')).toBeInTheDocument()
+  expect(screen.getByText('Outdoor.sy')).toBeInTheDocument()
 })
 
 test('Looksy card has Featured badge', () => {
