@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './Contact.module.css'
 
-const FORMSPREE_URL = 'YOUR_FORMSPREE_URL'
+const FORMSPREE_URL = 'https://formspree.io/f/xwvjaaqy'
 
 const SOCIAL_LINKS = [
   { label: 'LinkedIn ↗', href: 'https://www.linkedin.com/in/thomas-bachorz/' },
