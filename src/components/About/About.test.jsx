@@ -20,7 +20,7 @@ test('renders all skill tags', () => {
   render(<About />)
   expect(screen.getByText('React')).toBeInTheDocument()
   expect(screen.getByText('Django')).toBeInTheDocument()
-  expect(screen.getByText('Rails')).toBeInTheDocument()
+  expect(screen.getByText('Spring Boot')).toBeInTheDocument()
   expect(screen.getByText('AWS')).toBeInTheDocument()
 })
 
