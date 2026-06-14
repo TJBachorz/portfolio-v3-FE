@@ -7,6 +7,7 @@ const SKILLS = [
   'Python', 'Django', 'Java', 'Spring Boot',
   'Ruby', 'Rails', 'Node.js', 'Vue.js',
   'PostgreSQL', 'GraphQL', 'AWS', 'HTML · CSS',
+  'Claude AI · Claude Code',
 ]
 
 export default function About() {
