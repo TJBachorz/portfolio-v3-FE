@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #050b14;
+  --bg-surface: rgba(0, 200, 255, 0.04);
+  --cyan: #00c8ff;
+  --cyan-dim: rgba(0, 200, 255, 0.5);
+  --cyan-ghost: rgba(0, 200, 255, 0.12);
+  --border: rgba(0, 200, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --text: #f0f4f8;
+  --text-muted: rgba(240, 244, 248, 0.5);
+  --font-display: 'Orbitron', monospace;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  background-image:
+    linear-gradient(rgba(0, 200, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 200, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-attachment: fixed;
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--cyan-dim);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.section-label::before {
+  content: '// ';
+}
+
+section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+/* Divider between all sections except the first */
+section + section {
+  border-top: 1px solid var(--border-subtle);
+}

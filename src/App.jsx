@@ -1,3 +1,9 @@
+import './styles/global.css'
+
 export default function App() {
-  return <div style={{ color: 'white', padding: '2rem' }}>Vite + React 18 ✓</div>
+  return (
+    <div>
+      <p className="section-label">global styles working</p>
+    </div>
+  )
 }
