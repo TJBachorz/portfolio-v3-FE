@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion'
 import ProjectCard from './ProjectCard'
 import styles from './Projects.module.css'
+import looksyImg from '../../assets/looksy-1.gif'
+import looksyImg2 from '../../assets/looksy-2.gif'
+import arCubeImg from '../../assets/AR-cube.jpg'
 
 const PROJECTS = [
   {
     name: 'Looksy',
     featured: true,
+    image: looksyImg,
     description:
       'An augmented reality home-decorating app. Upload any image and it\'s processed into an interactive 3D model viewable in any mobile browser via Google\'s model-viewer — no app install required. Uses a dual-backend architecture: a Rails API for JWT-authenticated user data and a Node/Express service with AWS S3 for image upload and URL management.',
     tags: ['React', 'Ruby on Rails', 'Node.js', 'AWS S3', 'Google model-viewer', 'PostgreSQL'],

@@ -1,13 +1,19 @@
 import { motion } from 'framer-motion'
 import styles from './Projects.module.css'
 
-export default function ProjectCard({ name, description, tags, links, featured = false }) {
+export default function ProjectCard({ name, description, tags, links, featured = false, image = null }) {
   return (
     <motion.div
       className={`${styles.card} ${featured ? styles.featured : ''}`}
       whileHover={{ y: -2 }}
       transition={{ duration: 0.2 }}
     >
+      {image && (
+        <div className={styles.cardImage}>
+          <img src={image} alt={`${name} preview`} className={styles.cardImg} />
+          <div className={styles.cardImageOverlay} />
+        </div>
+      )}
       {featured && <span className={styles.badge}>Featured</span>}
       <h3 className={styles.cardName}>{name}</h3>
       <p className={styles.cardDesc}>{description}</p>
