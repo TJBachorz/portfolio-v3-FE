@@ -28,7 +28,7 @@ const PROJECTS = [
       'A road trip planner for craft beer lovers. Map out your next brewery vacation with a TOPOJSON-rendered interactive map, drag-and-drop route building, and live BreweryDB API data — all powered by React and Ruby on Rails.',
     tags: ['React', 'Ruby on Rails', 'TOPOJSON', 'PostgreSQL'],
     links: [
-      // { label: 'Live Demo ↗', href: 'https://epic-beer-run.web.app/' },
+      { label: 'Live Demo ↗', href: 'https://epic-beer-run.web.app/' },
       { label: 'Frontend', href: 'YOUR_BEER_RUN_FRONTEND_GITHUB_URL' },
       { label: 'Backend', href: 'YOUR_BEER_RUN_BACKEND_GITHUB_URL' },
     ],

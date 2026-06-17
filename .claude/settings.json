@@ -61,7 +61,10 @@
       "Bash(read f *)",
       "Bash(python3 -c ' *)",
       "Bash(python3 -)",
-      "PowerShell(git add .claude/settings.json)"
+      "PowerShell(git add .claude/settings.json)",
+      "PowerShell(git push origin master)",
+      "Skill(run)",
+      "Skill(run:*)"
     ],
     "additionalDirectories": [
       "\\\\wsl.localhost\\Ubuntu\\home\\tjbachorz\\VM_Home\\development\\portfolio-v3-FE\\src\\components"
