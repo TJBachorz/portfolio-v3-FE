@@ -22,3 +22,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local build artifacts
+.eslintcache
+.firebase/
+
+# local Claude Code settings
+.claude/settings.local.json
