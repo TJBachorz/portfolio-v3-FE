@@ -46,7 +46,22 @@
       "PowerShell(wsl -e bash -c \"cd /home/tjbachorz/VM_Home/development/portfolio-v3-FE && rm -f src/components/MainOuterContainer.js src/components/MainContainer.js src/components/Navbar.js src/components/BioPage.js src/components/Projects.js src/components/ABCdl.js src/components/EpicBeer.js src/components/Looksy.js src/components/Contact.js src/components/SoundToggle.js src/components/AudioContext.js src/components/Utilities.js && echo 'Component files deleted'\")",
       "PowerShell(wsl -e bash -c \"cd /home/tjbachorz/VM_Home/development/portfolio-v3-FE && rm -f src/assets/space-background.jpg src/assets/glow.png src/assets/background-large.jpg src/assets/linkedin.png src/assets/github.png src/assets/medium.png src/assets/twitter.png src/assets/soundOn.png src/assets/soundOff.png src/assets/react.png src/assets/AR-cube.jpg src/assets/looksy-1.gif src/assets/looksy-2.gif src/assets/BACHORZ_THOMAS_RESUME_PERSONAL.jpg src/assets/typing.mp3 src/assets/deploy.mp3 src/assets/error.mp3 src/assets/information.mp3 src/assets/ask.mp3 && echo 'Asset files deleted'\")",
       "PowerShell(wsl -e bash -c \"ls /home/tjbachorz/VM_Home/development/portfolio-v3-FE/src/assets/ && echo '---' && ls /home/tjbachorz/VM_Home/development/portfolio-v3-FE/src/components/\")",
-      "PowerShell(wsl -e bash -c \"cd /home/tjbachorz/VM_Home/development/portfolio-v3-FE && . /home/tjbachorz/.nvm/nvm.sh && nvm use 20 && npm test -- --watchAll=false 2>&1\")"
+      "PowerShell(wsl -e bash -c \"cd /home/tjbachorz/VM_Home/development/portfolio-v3-FE && . /home/tjbachorz/.nvm/nvm.sh && nvm use 20 && npm test -- --watchAll=false 2>&1\")",
+      "Bash(cd \"/mnt/c/Users/TJBac\" && pwd && ls)",
+      "Read(//mnt/c/Users/**)",
+      "Bash(npm run *)",
+      "PowerShell(wsl -e bash -c \"cd /home/tjbachorz/VM_Home/development/portfolio-v3-FE && npm run build\")",
+      "PowerShell(wsl bash -c \"cd /home/tjbachorz/VM_Home/development/portfolio-v3-FE && npm run build\")",
+      "PowerShell($env:WSLENV = \"\"; wsl -d Ubuntu -- bash -lc \"cd /home/tjbachorz/VM_Home/development/portfolio-v3-FE && npm run build 2>&1\")",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "Bash(awk '{print $2}')",
+      "Bash(xargs -I{} sh -c 'jq -r \"select\\(.type==\\\\\"assistant\\\\\"\\) | .message.content[]? | select\\(.type==\\\\\"tool_use\\\\\" and .name==\\\\\"Bash\\\\\"\\) | .input.command\" {} 2>/dev/null')",
+      "Bash(awk '{print $1}')",
+      "Bash(read f *)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -)",
+      "PowerShell(git add .claude/settings.json)"
     ],
     "additionalDirectories": [
       "\\\\wsl.localhost\\Ubuntu\\home\\tjbachorz\\VM_Home\\development\\portfolio-v3-FE\\src\\components"
